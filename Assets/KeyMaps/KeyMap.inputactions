@@ -1,0 +1,34 @@
+{
+    "name": "KeyMap",
+    "maps": [
+        {
+            "name": "Controls",
+            "id": "2af0cb30-15bf-4bb9-8402-ba65da505a4f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "e2588051-c893-4730-abdd-4507699f3b09",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ecee5058-c961-462c-9b1f-c2af90ca2fd5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
