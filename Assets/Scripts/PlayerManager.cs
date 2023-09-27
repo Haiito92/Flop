@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
-public class InputManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     public void OnClickInClickArea()
     {
