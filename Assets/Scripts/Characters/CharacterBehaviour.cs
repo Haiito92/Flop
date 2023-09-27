@@ -6,7 +6,7 @@ public class CharacterBehaviour : MonoBehaviour
 {
     [SerializeField, Expandable]private CharacterData _characterData;
 
-    public void TakeDamage(long amount)
+    private void TakeDamage(long amount)
     {
         if(amount < 0)
         {
