@@ -35,15 +35,6 @@ public partial class @KeyMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MousePosition"",
-                    ""type"": ""Value"",
-                    ""id"": ""cb960833-8e5b-433f-b462-0bb2235ac016"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -57,17 +48,6 @@ public partial class @KeyMap: IInputActionCollection2, IDisposable
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1d9d1e19-00e7-44da-9a49-e631b413ff94"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MousePosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -77,7 +57,6 @@ public partial class @KeyMap: IInputActionCollection2, IDisposable
         // Controls
         m_Controls = asset.FindActionMap("Controls", throwIfNotFound: true);
         m_Controls_Click = m_Controls.FindAction("Click", throwIfNotFound: true);
-        m_Controls_MousePosition = m_Controls.FindAction("MousePosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -140,13 +119,11 @@ public partial class @KeyMap: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Controls;
     private List<IControlsActions> m_ControlsActionsCallbackInterfaces = new List<IControlsActions>();
     private readonly InputAction m_Controls_Click;
-    private readonly InputAction m_Controls_MousePosition;
     public struct ControlsActions
     {
         private @KeyMap m_Wrapper;
         public ControlsActions(@KeyMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Click => m_Wrapper.m_Controls_Click;
-        public InputAction @MousePosition => m_Wrapper.m_Controls_MousePosition;
         public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -159,9 +136,6 @@ public partial class @KeyMap: IInputActionCollection2, IDisposable
             @Click.started += instance.OnClick;
             @Click.performed += instance.OnClick;
             @Click.canceled += instance.OnClick;
-            @MousePosition.started += instance.OnMousePosition;
-            @MousePosition.performed += instance.OnMousePosition;
-            @MousePosition.canceled += instance.OnMousePosition;
         }
 
         private void UnregisterCallbacks(IControlsActions instance)
@@ -169,9 +143,6 @@ public partial class @KeyMap: IInputActionCollection2, IDisposable
             @Click.started -= instance.OnClick;
             @Click.performed -= instance.OnClick;
             @Click.canceled -= instance.OnClick;
-            @MousePosition.started -= instance.OnMousePosition;
-            @MousePosition.performed -= instance.OnMousePosition;
-            @MousePosition.canceled -= instance.OnMousePosition;
         }
 
         public void RemoveCallbacks(IControlsActions instance)
@@ -192,6 +163,5 @@ public partial class @KeyMap: IInputActionCollection2, IDisposable
     public interface IControlsActions
     {
         void OnClick(InputAction.CallbackContext context);
-        void OnMousePosition(InputAction.CallbackContext context);
     }
 }
