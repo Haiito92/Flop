@@ -25,10 +25,4 @@ public class GameManager : MonoBehaviour
             _instance = this;
         }
     }
-
-    public void OnClickInClickArea()
-    {
-        Debug.Log("Clicked");
-        onClickDamage?.Invoke(_playerStats.ClickDamage);
-    }
 }

@@ -23,6 +23,12 @@ public class PlayerBehaviour : MonoBehaviour
         StartCoroutine(_doDamageCoroutine);
     }
 
+    public void ClickDamage()
+    {
+        Debug.Log("Clicked");
+        GameManager.onClickDamage?.Invoke(_playerStats.ClickDamage);
+    }
+
     private IEnumerator DoDamageCoroutine()
     {
         while (!_isDead)
