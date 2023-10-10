@@ -10,10 +10,11 @@ public class PlayerBehaviour : MonoBehaviour
     
     private IEnumerator _doDamageCoroutine;
 
-    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private PlayerStats _playerStats;
 
     private void Awake()
     {
+        GameManager.onHeroDamage += TakeDamage;
         _doDamageCoroutine = DoDamageCoroutine();
     }
 
@@ -26,8 +27,27 @@ public class PlayerBehaviour : MonoBehaviour
     {
         while (!_isDead)
         {
-            GameManager.onPlayerDamage?.Invoke(_playerData.Damage);
+            GameManager.onPlayerDamage?.Invoke(_playerStats.Damage);
             yield return new WaitForSeconds(1/_attackRate);
         }
+    }
+
+    public void TakeDamage(long amount)
+    {
+        _playerStats.Health -= amount;
+
+        if (_playerStats.Health <= 0)
+        {
+            Die();
+        }
+    }
+    private void Die()
+    {
+        Reset();
+    }
+
+    private void Reset()
+    {
+        _playerStats.Health = _playerStats.MaxHealth;
     }
 }

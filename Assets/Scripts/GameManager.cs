@@ -5,10 +5,11 @@ public delegate void DamageEvent(long damage);
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField, Expandable] private PlayerData _playerData;
+    [SerializeField] private PlayerStats _playerStats;
 
     public static DamageEvent onClickDamage;
     public static DamageEvent onPlayerDamage;
+    public static DamageEvent onHeroDamage;
 
     private static GameManager _instance;
     public static GameManager Instance => _instance;
@@ -28,6 +29,6 @@ public class GameManager : MonoBehaviour
     public void OnClickInClickArea()
     {
         Debug.Log("Clicked");
-        onClickDamage?.Invoke(_playerData.ClickDamage);
+        onClickDamage?.Invoke(_playerStats.ClickDamage);
     }
 }
