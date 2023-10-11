@@ -1,11 +1,38 @@
-using NaughtyAttributes;
 using UnityEngine;
 
 public delegate void DamageEvent(long damage);
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerStats _playerStats;
+    #region Properties
+    public int CurrentBossFight
+    {
+        get { return _currentBossFight; }
+        set 
+        { 
+            _currentBossFight = value;
+            UIManager.Instance.BossFightNumber.text = "BossFight : " + _currentBossFight.ToString();
+        }
+    }
+    public int CurrentSegment
+    {
+        get { return _currentSegment; }
+        set 
+        { 
+            _currentSegment = value;
+            UIManager.Instance.SegmentNumber.text = "Segment : " + _currentSegment.ToString();
+            if(_currentSegment == 11)
+            {
+                _currentSegment = 1;
+                UIManager.Instance.SegmentNumber.text = "Segment : " + _currentSegment.ToString();
+                NextBossFight();
+            }
+        }
+    }
+    #endregion
+
+    private int _currentBossFight = 1;
+    private int _currentSegment = 1;
 
     public static DamageEvent onClickDamage;
     public static DamageEvent onPlayerDamage;
@@ -24,5 +51,16 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
+
+    public void NextSegment()
+    {
+        CurrentSegment++;
+    }
+
+    public void NextBossFight()
+    {
+        CurrentBossFight++;
+        UIManager.Instance.UpdateBossFightUI();
     }
 }

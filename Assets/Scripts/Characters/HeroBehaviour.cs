@@ -42,6 +42,7 @@ public class HeroBehaviour : MonoBehaviour
 
     private void Die()
     {
+        GameManager.Instance.NextSegment();
         Reset();
     }
 

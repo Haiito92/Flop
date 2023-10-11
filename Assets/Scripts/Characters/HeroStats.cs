@@ -13,6 +13,7 @@ public class HeroStats : MonoBehaviour
         set { 
                 _health = (long)Mathf.Clamp(value, 0, _maxHealth);
                 HealthChange?.Invoke();
+                UIManager.Instance.HeroHealthFill.fillAmount = (float)_health/(float)_maxHealth;
             }
     }
     public long Damage

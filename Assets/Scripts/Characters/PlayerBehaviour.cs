@@ -25,7 +25,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void ClickDamage()
     {
-        Debug.Log("Clicked");
         GameManager.onClickDamage?.Invoke(_playerStats.ClickDamage);
     }
 
