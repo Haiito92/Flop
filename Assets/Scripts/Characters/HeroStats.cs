@@ -5,6 +5,14 @@ public delegate void StatChange();
 
 public class HeroStats : MonoBehaviour
 {
+    [SerializeField] private long _maxHealth;
+    [SerializeField] private long _health;
+    [SerializeField] private long _damage;
+    [SerializeField] private long _attackspeed;
+    [SerializeField] private long _crit;
+
+    public StatChange HealthChange;
+
     #region Properties
     public long MaxHealth => _maxHealth;
     public long Health
@@ -23,12 +31,4 @@ public class HeroStats : MonoBehaviour
     }
 
     #endregion
-
-    [SerializeField] private long _maxHealth;
-    [SerializeField] private long _health;
-    [SerializeField] private long _damage;
-    [SerializeField] private long _attackspeed;
-    [SerializeField] private long _crit;
-
-    public StatChange HealthChange;
 }

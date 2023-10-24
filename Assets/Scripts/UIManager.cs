@@ -4,6 +4,15 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _bossFightNumber;
+    [SerializeField] private TextMeshProUGUI _segmentNumber;
+
+    [SerializeField] private Image _playerHealthFill;
+    [SerializeField] private Image _heroHealthFill;
+
+    private static UIManager _instance;
+    public static UIManager Instance => _instance;
+
     #region Properties
     public TextMeshProUGUI BossFightNumber
     {
@@ -26,15 +35,6 @@ public class UIManager : MonoBehaviour
         set { _heroHealthFill = value; }
     }
     #endregion
-
-    [SerializeField] private TextMeshProUGUI _bossFightNumber;
-    [SerializeField] private TextMeshProUGUI _segmentNumber;
-
-    [SerializeField] private Image _playerHealthFill;
-    [SerializeField] private Image _heroHealthFill;
-
-    private static UIManager _instance;
-    public static UIManager Instance => _instance;
 
     private void Awake()
     {

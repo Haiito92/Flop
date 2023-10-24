@@ -14,6 +14,8 @@ public class HeroBehaviour : MonoBehaviour
     {
         GameManager.onClickDamage += TakeDamage;
         GameManager.onPlayerDamage += TakeDamage;
+        GameManager.onNextSegment += LevelUp;
+
         _doDamageCoroutine = DoDamageCoroutine();
     }
 
@@ -22,6 +24,19 @@ public class HeroBehaviour : MonoBehaviour
         StartCoroutine(_doDamageCoroutine);
     }
 
+    // Boost on new segment //
+    private void LevelUp()
+    {
+        _heroStats.Damage += 1;
+    }
+
+    // Reset //
+    private void Reset()
+    {
+        _heroStats.Health = _heroStats.MaxHealth;
+    }
+
+    // Damage //
     private IEnumerator DoDamageCoroutine()
     {
         while (!_isDead)
@@ -30,6 +45,8 @@ public class HeroBehaviour : MonoBehaviour
             yield return new WaitForSeconds(1 / _attackRate);
         }
     }
+
+    // Health //
     public void TakeDamage(long amount)
     {
         _heroStats.Health -= amount;
@@ -39,15 +56,9 @@ public class HeroBehaviour : MonoBehaviour
             Die();
         }
     }
-
     private void Die()
     {
         GameManager.Instance.NextSegment();
         Reset();
-    }
-
-    private void Reset()
-    {
-        _heroStats.Health = _heroStats.MaxHealth;
     }
 }
