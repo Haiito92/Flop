@@ -1,17 +1,47 @@
-using NaughtyAttributes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public delegate void DamageEvent(long damage);
+public delegate void GameEvent();
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField, Expandable] private PlayerData _playerData;
+    // GameStatus Fields
+    private int _currentBossFight = 1;
+    private int _currentSegment = 1;
 
+    // DamageEvents
     public static DamageEvent onClickDamage;
     public static DamageEvent onPlayerDamage;
+    public static DamageEvent onHeroDamage;
+
+    // GameEvents
+    public static GameEvent onNextSegment;
+    public static GameEvent onNextBossFight;
+    public static GameEvent onResetBossFight;
 
     private static GameManager _instance;
     public static GameManager Instance => _instance;
+
+    #region Properties
+    public int CurrentBossFight
+    {
+        get { return _currentBossFight; }
+        set 
+        { 
+            _currentBossFight = value;
+        }
+    }
+    public int CurrentSegment
+    {
+        get { return _currentSegment; }
+        set 
+        { 
+            _currentSegment = value;
+            
+        }
+    }
+    #endregion
 
     private void Awake()
     {
@@ -25,9 +55,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnClickInClickArea()
+    public void NextSegment()
     {
-        Debug.Log("Clicked");
-        onClickDamage?.Invoke(_playerData.ClickDamage);
+        CurrentSegment++;
+        UIManager.Instance.SegmentNumber.text = "Segment : " + CurrentSegment.ToString();
+        onNextSegment?.Invoke();
+
+        if (CurrentSegment == 11)
+        {
+            CurrentSegment = 1;
+            UIManager.Instance.SegmentNumber.text = "Segment : " + CurrentSegment.ToString();
+            NextBossFight();
+        }
+    }
+
+    public void NextBossFight()
+    {
+        CurrentBossFight++;
+        UIManager.Instance.BossFightNumber.text = "BossFight : " + CurrentBossFight.ToString();
+        UIManager.Instance.UpdateBossFightUI();
+    }
+    public void ResetBossFight()
+    {
+        onResetBossFight?.Invoke();
     }
 }
