@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum EquipementType
 {
+    NONE,
     HEAD,
     CHEST,
     LEGS

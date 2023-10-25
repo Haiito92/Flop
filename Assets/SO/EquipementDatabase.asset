@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: EquipementDatabase
   m_EditorClassIdentifier: 
   _equipementDatas:
-  - _name: Knight Sword
-    _description: Knight Sword
-    _sprite: {fileID: 21300000, guid: c5a0a286d90bf0247ba49e94e2ae135f, type: 3}
-    _equipementType: 0
-  - _name: Jedi Sword
-    _description: Jedi Sword
-    _sprite: {fileID: 21300000, guid: 52d4e0240b0a57842b47584ae886cfba, type: 3}
+  - _name: Helmet
+    _description: none
+    _sprite: {fileID: -1709219863, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
     _equipementType: 1
+  - _name: Chestplate
+    _description: none
+    _sprite: {fileID: 574449848, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
+    _equipementType: 2
+  - _name: Legs
+    _description: none
+    _sprite: {fileID: 2001888223, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
+    _equipementType: 3

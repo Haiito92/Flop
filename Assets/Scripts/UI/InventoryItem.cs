@@ -6,21 +6,20 @@ using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public enum ItemClass
-    {
-        BOOTS,
-        CHESTPLATE
-    }
-
     [Header("UI")]
     public Image image;
-    [Header("Type")]
-    public ItemClass type = ItemClass.BOOTS;
 
     [HideInInspector] private Transform parentAfterDrag;
 
+    private EquipementController equipment;
+
     public Transform ParentAfterDrag { get => parentAfterDrag; set => parentAfterDrag = value; }
 
+    private void Awake()
+    {
+        equipment = GetComponent<EquipementController>();
+        image = GetComponent<Image>();
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         ParentAfterDrag = transform.parent;
@@ -28,12 +27,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetAsLastSibling();
         image.raycastTarget = false;
     }
-
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
     }
-
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(ParentAfterDrag);

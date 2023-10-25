@@ -543,6 +543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EquipmentSlot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
+      propertyPath: _slotType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5822623386440572568, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -665,6 +669,7 @@ Transform:
   - {fileID: 1703433857}
   - {fileID: 1642926395}
   - {fileID: 266031806}
+  - {fileID: 687653175}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &228180839
@@ -931,6 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266031806}
   - component: {fileID: 266031807}
+  - component: {fileID: 266031808}
   m_Layer: 0
   m_Name: HeroManager
   m_TagString: Untagged
@@ -965,7 +971,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76805e751d31e4b44a35080ceb0c2a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heroData: {fileID: 11400000, guid: c64e3c6dd36d42f4d81bc6f283ced5c2, type: 2}
+  _attackRate: 2
+  _heroStats: {fileID: 266031808}
+--- !u!114 &266031808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266031805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede6f223c7e44534794f89f19ddd3066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _health: 0
+  _damage:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _attackspeed:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _crit:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1001 &287025860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2799,6 +2851,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5822623386440572568, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
   m_PrefabInstance: {fileID: 678468290}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &687653174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 687653175}
+  - component: {fileID: 687653176}
+  m_Layer: 0
+  m_Name: DatabaseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &687653175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687653174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 190113346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &687653176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687653174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9a886707709ac4ab6d7cfbd7b84d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _equipementDatabase: {fileID: 11400000, guid: 91174e35e5ade0643a59f8662d949135, type: 2}
 --- !u!1 &734777656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4722,6 +4819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EquipmentSlot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
+      propertyPath: _slotType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5822623386440572568, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5476,6 +5577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642926395}
   - component: {fileID: 1642926396}
+  - component: {fileID: 1642926397}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -5511,7 +5613,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackRate: 2
-  _playerData: {fileID: 11400000, guid: 9fb2000c95864f8448e041ffa5363f83, type: 2}
+  _playerStats: {fileID: 1642926397}
+--- !u!114 &1642926397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642926394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00e4672d974afa489430a0a6a4395be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _health: 0
+  _damage:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _clickDamage:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _attackspeed:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _crit:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1001 &1652291020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5761,7 +5916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b29ec9bc3fb1024b8b6e38cece85f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerData: {fileID: 11400000, guid: 9fb2000c95864f8448e041ffa5363f83, type: 2}
 --- !u!114 &1703433859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5801,17 +5955,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3672332716252411020, guid: 1395c62c47b5a0b499aea518c385a8a5, type: 3}
   m_PrefabInstance: {fileID: 5752238698643299681}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1727212081 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5665093703868336318, guid: 1395c62c47b5a0b499aea518c385a8a5, type: 3}
-  m_PrefabInstance: {fileID: 5752238698643299681}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1756353162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5925,6 +6068,10 @@ PrefabInstance:
     - target: {fileID: 2041258140357914087, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
+      propertyPath: _slotType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5822623386440572568, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
       propertyPath: m_Pivot.x
@@ -7333,10 +7480,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7380014263293377969, guid: 1395c62c47b5a0b499aea518c385a8a5, type: 3}
-      propertyPath: image
-      value: 
-      objectReference: {fileID: 1727212081}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

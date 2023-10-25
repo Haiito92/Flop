@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6623223576102632750}
   - component: {fileID: 5665093703868336318}
   - component: {fileID: 7380014263293377969}
+  - component: {fileID: 5045063396686946954}
   m_Layer: 5
   m_Name: EquipmentImage
   m_TagString: Untagged
@@ -88,4 +89,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff757846ae04a9f448ba22926c437f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 5665093703868336318}
+--- !u!114 &5045063396686946954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093711562456296177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6fa4efe3d4483408b6a59c8ec5aabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _description: 
+  _equipementType: 0
