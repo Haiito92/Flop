@@ -1,6 +1,4 @@
-using NaughtyAttributes;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
