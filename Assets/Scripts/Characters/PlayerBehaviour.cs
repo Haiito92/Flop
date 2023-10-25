@@ -23,20 +23,23 @@ public class PlayerBehaviour : MonoBehaviour
         StartCoroutine(_doDamageCoroutine);
     }
 
+    // Damage Functions //
+
     public void ClickDamage()
     {
-        GameManager.onClickDamage?.Invoke(_playerStats.ClickDamage);
+        GameManager.onClickDamage?.Invoke(_playerStats.ClickDamage.BaseValue);
     }
 
     private IEnumerator DoDamageCoroutine()
     {
         while (!_isDead)
         {
-            GameManager.onPlayerDamage?.Invoke(_playerStats.Damage);
+            GameManager.onPlayerDamage?.Invoke(_playerStats.Damage.BaseValue);
             yield return new WaitForSeconds(1/_attackRate);
         }
     }
-
+   
+    // Health Functions //
     public void TakeDamage(long amount)
     {
         _playerStats.Health -= amount;
@@ -51,8 +54,10 @@ public class PlayerBehaviour : MonoBehaviour
         Reset();
     }
 
+    // Reset Functions //
     private void Reset()
     {
-        _playerStats.Health = _playerStats.MaxHealth;
+        _playerStats.Health = _playerStats.MaxHealth.BaseValue;
+        GameManager.Instance.ResetBossFight();
     }
 }

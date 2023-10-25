@@ -329,11 +329,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede6f223c7e44534794f89f19ddd3066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth:
+    _baseValue: 100
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 10
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 100
+        value: 1000
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   _health: 100
-  _damage: 10
-  _attackspeed: 1
-  _crit: 1
+  _damage:
+    _baseValue: 10
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 10
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 100
+        value: 1000
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _attackspeed:
+    _baseValue: 10
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 10
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 100
+        value: 1000
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _crit:
+    _baseValue: 10
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 10
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 100
+        value: 1000
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &344513633
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +509,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344513633}
   m_CullTransparentMesh: 1
+--- !u!1 &518054244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518054245}
+  m_Layer: 0
+  m_Name: ---OBJECTS---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &518054245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518054244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,8 +1081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2423ad546ae56614397e4ceeefc81e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _segmentNumber: {fileID: 1809562506}
   _bossFightNumber: {fileID: 651883130}
+  _segmentNumber: {fileID: 1809562506}
   _playerHealthFill: {fileID: 1697768370}
   _heroHealthFill: {fileID: 61474901}
 --- !u!1 &1067229222
@@ -1085,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.050980393}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1274,12 +1405,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00e4672d974afa489430a0a6a4395be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   _health: 100
-  _damage: 10
-  _clickDamage: 10
-  _attackspeed: 1
-  _crit: 1
+  _damage:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _clickDamage:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _attackspeed:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _crit:
+    _baseValue: 0
+    _scalingCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &1642926399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,5 +1955,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 190113346}
+  - {fileID: 518054245}
   - {fileID: 1934225832}
   - {fileID: 734777659}
