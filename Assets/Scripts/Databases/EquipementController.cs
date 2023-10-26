@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EquipementController : MonoBehaviour
 {
@@ -12,26 +13,29 @@ public class EquipementController : MonoBehaviour
     [SerializeField] private EquipementType _equipementType;
 
     //References
-    private SpriteRenderer _spriteRenderer;
+    private Image _image;
+
+    public Image Image { get => _image; set => _image = value; }
+    public EquipementData EquipementData { get => _equipementData; set => _equipementData = value; }
 
     private void Awake()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _image = GetComponent<Image>();
     }
 
     private void Start()
     {
-        _equipementData = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[0];
+        EquipementData = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[0];
         Init();
     }
 
     public void Init()
     {
-        if(_equipementData == null) { return; }
+        if(EquipementData == null) { return; }
 
-        name = _equipementData.Name;
-        _description = _equipementData.Description;
-        _spriteRenderer.sprite = _equipementData.Sprite;
-        _equipementType = _equipementData.EquipementType;
+        name = EquipementData.Name;
+        _description = EquipementData.Description;
+        Image.sprite = EquipementData.Sprite;
+        _equipementType = EquipementData.EquipementType;
     }
 }
