@@ -36,6 +36,10 @@ public class HeroStats : MonoBehaviour
     #endregion
 
     // Stats Scaling //
+    private void Awake()
+    {
+        _health = _maxHealth.BaseValue;
+    }
 
     public void ScaleStats(int level)
     {

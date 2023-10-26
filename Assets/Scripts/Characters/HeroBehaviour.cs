@@ -7,9 +7,12 @@ public class HeroBehaviour : MonoBehaviour
     private bool _isDead = false;
     [SerializeField] private float _attackRate = 2;
     private int _level = 1;
-   
+
+    [SerializeField] private float _timeBeforeRespawn; 
+
     //Coroutines&IEnumerators
     private IEnumerator _doDamageCoroutine;
+    private Coroutine _waitBeforeRespawn;
 
     // References
     [SerializeField] private HeroStats _heroStats;
@@ -19,6 +22,7 @@ public class HeroBehaviour : MonoBehaviour
         GameManager.onClickDamage += TakeDamage;
         GameManager.onPlayerDamage += TakeDamage;
         GameManager.onNextSegment += LevelUp;
+        GameManager.onResetBossFight += Reset;
 
         _doDamageCoroutine = DoDamageCoroutine();
     }
@@ -58,11 +62,31 @@ public class HeroBehaviour : MonoBehaviour
     private void Die()
     {
         GameManager.Instance.NextSegment();
-        Reset();
+        _waitBeforeRespawn = StartCoroutine(WaitBeforeRespawn());
     }
     // Reset Functions //
     private void Reset()
     {
         _heroStats.Health = _heroStats.MaxHealth.BaseValue;
     }
+
+    private IEnumerator WaitBeforeRespawn()
+    {
+        StopCoroutine(_doDamageCoroutine);
+        GameManager.onClickDamage -= TakeDamage;
+        GameManager.onPlayerDamage -= TakeDamage;
+        yield return new WaitForSeconds(_timeBeforeRespawn);
+        Reset();
+        GameManager.onClickDamage += TakeDamage;
+        GameManager.onPlayerDamage += TakeDamage;
+        _doDamageCoroutine = DoDamageCoroutine();
+        StartCoroutine(_doDamageCoroutine);
+        StopWaitBeforeRespawn();
+    }
+
+    private void StopWaitBeforeRespawn()
+    {
+        StopCoroutine(_waitBeforeRespawn);
+    }
+
 }

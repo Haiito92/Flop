@@ -35,4 +35,9 @@ public class PlayerStats : MonoBehaviour
     }
 
     #endregion
+
+    private void Awake()
+    {
+        _health = _maxHealth.BaseValue;
+    }
 }
