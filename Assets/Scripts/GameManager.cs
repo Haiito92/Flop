@@ -10,11 +10,6 @@ public class GameManager : MonoBehaviour
     private int _currentBossFight = 1;
     private int _currentSegment = 1;
 
-    // DamageEvents
-    public static DamageEvent onClickDamage;
-    public static DamageEvent onPlayerDamage;
-    public static DamageEvent onHeroDamage;
-
     // GameEvents
     public static GameEvent onNextSegment;
     public static GameEvent onNextBossFight;

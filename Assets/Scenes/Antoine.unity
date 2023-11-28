@@ -459,8 +459,6 @@ GameObject:
   - component: {fileID: 620318742}
   - component: {fileID: 620318745}
   - component: {fileID: 620318746}
-  - component: {fileID: 620318744}
-  - component: {fileID: 620318743}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -483,100 +481,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1949528412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &620318743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620318741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4c3fbfc6df8ee489281aea4d1b1689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackRate: 2
-  _playerStats: {fileID: 620318744}
---- !u!114 &620318744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620318741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00e4672d974afa489430a0a6a4395be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth:
-    _baseValue: 1000
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  _health: 1000
-  _damage:
-    _baseValue: 10
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 1
-        value: 10
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 48.94387
-        value: 489.4387
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 100
-        value: 1000
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  _clickDamage:
-    _baseValue: 10
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  _attackspeed:
-    _baseValue: 10
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  _crit:
-    _baseValue: 10
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
 --- !u!114 &620318745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,8 +1154,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1308539016}
   - component: {fileID: 1308539019}
-  - component: {fileID: 1308539018}
-  - component: {fileID: 1308539017}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -1274,138 +1176,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1949528412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1308539017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308539015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76805e751d31e4b44a35080ceb0c2a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackRate: 2
-  _timeBeforeRespawn: 3
-  _heroStats: {fileID: 1308539018}
---- !u!114 &1308539018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308539015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ede6f223c7e44534794f89f19ddd3066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth:
-    _baseValue: 100
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 1
-        value: 100
-        inSlope: 9.090909
-        outSlope: 9.090909
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 100
-        value: 1000
-        inSlope: 9.090909
-        outSlope: 9.090909
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  _health: 100
-  _damage:
-    _baseValue: 10
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 1
-        value: 10
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 100
-        value: 1000
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  _attackspeed:
-    _baseValue: 10
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 1
-        value: 10
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 100
-        value: 1000
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  _crit:
-    _baseValue: 10
-    _scalingCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 1
-        value: 10
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 100
-        value: 1000
-        inSlope: 10
-        outSlope: 10
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
 --- !u!212 &1308539019
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1761,7 +1531,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 620318743}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
           m_MethodName: ClickDamage
           m_Mode: 1
