@@ -7,9 +7,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bossFightNumber;
     [SerializeField] private TextMeshProUGUI _segmentNumber;
 
-    [SerializeField] private Image _playerHealthFill;
-    [SerializeField] private Image _heroHealthFill;
-
     #region Properties
     public TextMeshProUGUI BossFightNumber
     {
@@ -20,16 +17,6 @@ public class UIManager : MonoBehaviour
     {
         get { return _segmentNumber; }
         set { _segmentNumber = value; }
-    }
-    public Image PlayerHealthFill
-    {
-        get { return _playerHealthFill; }
-        set { _playerHealthFill = value; }
-    }
-    public Image HeroHealthFill
-    {
-        get { return _heroHealthFill; }
-        set { _heroHealthFill = value; }
     }
     #endregion
 

@@ -1,8 +1,5 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
-
-public delegate void DamageEvent(long damage);
-public delegate void GameEvent();
 
 public class GameManager : MonoBehaviour
 {
@@ -11,9 +8,9 @@ public class GameManager : MonoBehaviour
     private int _currentSegment = 1;
 
     // GameEvents
-    public static GameEvent onNextSegment;
-    public static GameEvent onNextBossFight;
-    public static GameEvent onResetBossFight;
+    public Action OnNextSegment;
+    public Action OnNextBossFight;
+    public Action OnResetBossFight;
 
     #region Properties
     public int CurrentBossFight
@@ -60,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentSegment++;
         UIManager.Instance.SegmentNumber.text = "Segment : " + CurrentSegment.ToString();
-        onNextSegment?.Invoke();
+        OnNextSegment?.Invoke();
 
         if (CurrentSegment == 11)
         {
@@ -78,6 +75,6 @@ public class GameManager : MonoBehaviour
     }
     public void ResetBossFight()
     {
-        onResetBossFight?.Invoke();
+        OnResetBossFight?.Invoke();
     }
 }
