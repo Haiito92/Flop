@@ -10,9 +10,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _playerHealthFill;
     [SerializeField] private Image _heroHealthFill;
 
-    private static UIManager _instance;
-    public static UIManager Instance => _instance;
-
     #region Properties
     public TextMeshProUGUI BossFightNumber
     {
@@ -36,9 +33,12 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-    private void Awake()
+    #region Singleton
+    private static UIManager _instance;
+    public static UIManager Instance => _instance;
+    void InitSingleton()
     {
-        if(_instance != null && _instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this);
         }
@@ -46,6 +46,12 @@ public class UIManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
+    #endregion
+
+    private void Awake()
+    {
+        InitSingleton();
     }
 
     public void UpdateBossFightUI()

@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour
     public static GameEvent onNextBossFight;
     public static GameEvent onResetBossFight;
 
-    private static GameManager _instance;
-    public static GameManager Instance => _instance;
-
     #region Properties
     public int CurrentBossFight
     {
@@ -38,9 +35,12 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    private void Awake()
+    #region Singleton
+    private static GameManager _instance;
+    public static GameManager Instance => _instance;
+    void InitSingleton()
     {
-        if(_instance != null && _instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this);
         }
@@ -48,6 +48,12 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
+    #endregion
+
+    private void Awake()
+    {
+        InitSingleton();
     }
 
     public void NextSegment()

@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 620318742}
   - component: {fileID: 620318745}
   - component: {fileID: 620318746}
+  - component: {fileID: 620318747}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -507,7 +508,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e2588051-c893-4730-abdd-4507699f3b09
     m_ActionName: Controls/Click[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -567,6 +580,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &620318747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620318741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff51636d23b1d64fae0920199ef301e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+  _maxHealth: 100
+  _target: {fileID: 1308539020}
+  _clickDamage: 10
 --- !u!1 &700649803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,8 +1183,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1308539016}
   - component: {fileID: 1308539019}
+  - component: {fileID: 1308539020}
   m_Layer: 0
-  m_Name: Hero
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,6 +1258,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1308539020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308539015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0309f3f4b1fd304284eaecba41634d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+  _maxHealth: 100
+  _target: {fileID: 620318747}
 --- !u!1 &1327122470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,9 +1576,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
-          m_MethodName: ClickDamage
+        - m_Target: {fileID: 620318747}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: ClickAttack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
