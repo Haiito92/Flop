@@ -593,7 +593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _maxHealth: 100
+  _maxHealth: 1000
+  _healthBar: {fileID: 2066750086}
+  _attackSpeed: 0.5
   _target: {fileID: 1308539020}
   _clickDamage: 10
 --- !u!1 &700649803
@@ -814,6 +816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 903819449}
+  - component: {fileID: 903819450}
   m_Layer: 5
   m_Name: HeroHealthBar
   m_TagString: Untagged
@@ -842,6 +845,19 @@ RectTransform:
   m_AnchoredPosition: {x: 628, y: -174.02496}
   m_SizeDelta: {x: 388.7393, y: 35.6425}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &903819450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903819448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3615dc3183303294b98d81a8bf3df46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fill: {fileID: 21574247}
 --- !u!1 &961251400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _maxHealth: 100
+  _healthBar: {fileID: 903819450}
+  _attackSpeed: 0.5
   _target: {fileID: 620318747}
 --- !u!1 &1327122470
 GameObject:
@@ -1635,6 +1653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066750085}
+  - component: {fileID: 2066750086}
   m_Layer: 5
   m_Name: PlayerHealthBar
   m_TagString: Untagged
@@ -1663,6 +1682,19 @@ RectTransform:
   m_AnchoredPosition: {x: 395, y: 116.94}
   m_SizeDelta: {x: 545.5387, y: 46.8425}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2066750086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066750084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3615dc3183303294b98d81a8bf3df46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fill: {fileID: 1474039439}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

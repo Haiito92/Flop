@@ -3,6 +3,6 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    [SerializeField] long _damage;
+    [SerializeField] protected long _damage;
 
 }
