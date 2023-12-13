@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attackable : MonoBehaviour
+public class Character : Entity, IAttacker, IAttackable
 {
-
     [SerializeField] long _maxHealth = 1;
     long _currentHealth;
     [SerializeField] HealthBar _healthBar;
@@ -21,8 +20,7 @@ public class Attackable : MonoBehaviour
             OnHealthChange?.Invoke(_currentHealth, _maxHealth);
         }
     }
-    public bool IsAlive => CurrentHealth >= 0;
-
+    public bool IsAlive { get { return CurrentHealth >= 0; } set { } }
 
     //Events
     Action<long, long> OnHealthChange;
@@ -58,13 +56,13 @@ public class Attackable : MonoBehaviour
 
     public virtual void Die()
     {
-        //StopIdleAttack();
+        StopIdleAttack();
     }
 
     public virtual void ResetCharacter()
     {
         CurrentHealth = _maxHealth;
-        //StartIdleAttack();
+        StartIdleAttack();
     }
 
 

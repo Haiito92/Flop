@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attacker : MonoBehaviour
+public class Entity : MonoBehaviour, IAttacker
 {
     [SerializeField] long _damage;
 
     [SerializeField] float _attackSpeed = 1.0f;
     Coroutine _idleAttack;
 
-    [SerializeField] Attackable _target;
+    [SerializeField] IAttackable _target;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class Attacker : MonoBehaviour
         _target.TakeDamage(damage);
     }
 
-    void StartIdleAttack()
+    protected void StartIdleAttack()
     {
         _idleAttack = StartCoroutine(IdleAttack());
     }
@@ -37,7 +37,7 @@ public class Attacker : MonoBehaviour
         }
     }
 
-    void StopIdleAttack()
+    protected void StopIdleAttack()
     {
         if (_idleAttack != null) StopCoroutine(_idleAttack);
     }

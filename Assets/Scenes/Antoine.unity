@@ -457,7 +457,6 @@ GameObject:
   - component: {fileID: 620318742}
   - component: {fileID: 620318745}
   - component: {fileID: 620318746}
-  - component: {fileID: 620318748}
   - component: {fileID: 620318747}
   m_Layer: 0
   m_Name: Player
@@ -588,26 +587,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 620318741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b4e4225ced5ab4a95c60d278423320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 1000
-  _healthBar: {fileID: 2066750086}
---- !u!114 &620318748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620318741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d091c46d091edb4fac9f99e495cefd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ff51636d23b1d64fae0920199ef301e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
   _attackSpeed: 1
-  _target: {fileID: 1308539021}
+  _maxHealth: 1000
+  _healthBar: {fileID: 2066750086}
+  _clickDamage: 10
 --- !u!1 &700649803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,8 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1308539016}
   - component: {fileID: 1308539019}
-  - component: {fileID: 1308539022}
-  - component: {fileID: 1308539021}
+  - component: {fileID: 1308539020}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1285,7 +1271,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1308539021
+--- !u!114 &1308539020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1294,26 +1280,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1308539015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b4e4225ced5ab4a95c60d278423320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _healthBar: {fileID: 903819450}
---- !u!114 &1308539022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308539015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d091c46d091edb4fac9f99e495cefd7, type: 3}
+  m_Script: {fileID: 11500000, guid: c0309f3f4b1fd304284eaecba41634d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
   _attackSpeed: 1
-  _target: {fileID: 620318747}
+  _maxHealth: 100
+  _healthBar: {fileID: 903819450}
 --- !u!1 &1327122470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,7 +1590,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 620318747}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: ClickAttack
           m_Mode: 1
