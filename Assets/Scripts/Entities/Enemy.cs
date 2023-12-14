@@ -8,6 +8,6 @@ public class Enemy : Character, IAttacker, IAttackable
     {
         base.Die();
 
-        GameManager.Instance.OnNextSegment?.Invoke();
+        GameManager.Instance.ToNextSegment();
     }
 }

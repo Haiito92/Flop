@@ -9,12 +9,12 @@ public class Entity : MonoBehaviour, IAttacker
     [SerializeField] float _attackSpeed = 1.0f;
     Coroutine _idleAttack;
 
-    [SerializeField] IAttackable _target;
+    IAttackable _target;
 
-    private void Start()
-    {
-        StartIdleAttack();
-    }
+    //Properties
+    #region Properties
+    public IAttackable Target {  get { return _target; } set { _target = value; } }
+    #endregion
 
     public void Attack(long damage)
     {
@@ -23,22 +23,26 @@ public class Entity : MonoBehaviour, IAttacker
         _target.TakeDamage(damage);
     }
 
-    protected void StartIdleAttack()
+    public void StartIdleAttack()
     {
-        _idleAttack = StartCoroutine(IdleAttack());
+        if(_idleAttack == null) _idleAttack = StartCoroutine(IdleAttack());
     }
 
     IEnumerator IdleAttack()
     {
         while (true)
         {
-            Attack(_damage);
-            yield return new WaitForSeconds(1f / _attackSpeed);
+            if(_target != null) Attack(_damage);
+            yield return new WaitForSeconds(_attackSpeed);
         }
     }
 
     protected void StopIdleAttack()
     {
-        if (_idleAttack != null) StopCoroutine(_idleAttack);
+        if (_idleAttack != null)
+        {
+            StopCoroutine(_idleAttack);
+            _idleAttack = null;
+        }
     }
 }

@@ -8,16 +8,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _segmentNumber;
 
     #region Properties
-    public TextMeshProUGUI BossFightNumber
-    {
-        get { return _bossFightNumber; }
-        set { _bossFightNumber = value; }
-    }
-    public TextMeshProUGUI SegmentNumber
-    {
-        get { return _segmentNumber; }
-        set { _segmentNumber = value; }
-    }
     #endregion
 
     #region Singleton
@@ -41,8 +31,20 @@ public class UIManager : MonoBehaviour
         InitSingleton();
     }
 
+    private void Start()
+    {
+        GameManager.Instance.OnNextSegment += UpdateSegmentUI;
+        GameManager.Instance.OnNextBossFight += UpdateBossFightUI;
+    }
+
+    void UpdateSegmentUI()
+    {
+        _segmentNumber.text = "Segment : " + GameManager.Instance.CurrentSegment.ToString();
+    }
+
     public void UpdateBossFightUI()
     {
-
+        _bossFightNumber.text = "BossFight : " + GameManager.Instance.CurrentBossFight.ToString();
+        UpdateSegmentUI();
     }
 }

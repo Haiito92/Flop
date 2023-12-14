@@ -57,6 +57,7 @@ public class Character : Entity, IAttacker, IAttackable
     public virtual void Die()
     {
         StopIdleAttack();
+        ResetCharacter();
     }
 
     public virtual void ResetCharacter()

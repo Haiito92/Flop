@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Ref Game objects
+    [SerializeField] Player _player;
+    [SerializeField] Enemy _enemy;
+
     // GameStatus Fields
     private int _currentBossFight = 1;
     private int _currentSegment = 1;
@@ -53,25 +57,38 @@ public class GameManager : MonoBehaviour
         InitSingleton();
     }
 
-    public void NextSegment()
+    private void Start()
     {
-        CurrentSegment++;
-        UIManager.Instance.SegmentNumber.text = "Segment : " + CurrentSegment.ToString();
-        OnNextSegment?.Invoke();
-
-        if (CurrentSegment == 11)
-        {
-            CurrentSegment = 1;
-            UIManager.Instance.SegmentNumber.text = "Segment : " + CurrentSegment.ToString();
-            NextBossFight();
-        }
+        StartSegment();
     }
 
-    public void NextBossFight()
+    void StartSegment()
+    {
+        _player.Target = _enemy;
+        _enemy.Target = _player;
+        _player.StartIdleAttack();
+        _enemy.StartIdleAttack();
+    }
+
+    public void ToNextSegment()
+    {
+        CurrentSegment++;
+        if (CurrentSegment == 11)
+        {
+            ToNextBossFight();
+        }
+        else
+        {
+            OnNextSegment?.Invoke();
+        }
+
+    }
+
+    public void ToNextBossFight()
     {
         CurrentBossFight++;
-        UIManager.Instance.BossFightNumber.text = "BossFight : " + CurrentBossFight.ToString();
-        UIManager.Instance.UpdateBossFightUI();
+        CurrentSegment = 1;
+        OnNextBossFight?.Invoke();
     }
     public void ResetBossFight()
     {
