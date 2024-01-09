@@ -15,6 +15,11 @@ public class CharacterHealth : MonoBehaviour
         _characterAttack = GetComponent<CharacterAttack>();
     }
 
+    //Events
+    public event Action<long, long> OnHealthChange;
+    public event Action OnStartDeath;
+    public event Action OnEndDeath;
+
     //Properties
     public long CurrentHealth
     {
@@ -27,14 +32,14 @@ public class CharacterHealth : MonoBehaviour
     }
     public bool IsAlive { get { return CurrentHealth >= 0; } set { } }
 
-    //Events
-    public event Action<long, long> OnHealthChange;
-    public event Action OnDeath;
-
-
     private void Awake()
     {
         Init();
+    }
+
+    private void Start()
+    {
+        OnHealthChange.Invoke(_currentHealth, _maxHealth);
     }
 
     void Init()
@@ -56,11 +61,12 @@ public class CharacterHealth : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             _characterAttack.StopIdleAttack();
-            OnDeath?.Invoke();
+            OnStartDeath?.Invoke();
         }
     }
     public virtual void Die()
     {
+        OnEndDeath?.Invoke();
         Destroy(GetComponentInParent<Transform>().gameObject);
     }
 

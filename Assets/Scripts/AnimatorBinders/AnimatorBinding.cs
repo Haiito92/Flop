@@ -18,7 +18,7 @@ public class AnimatorBinding : MonoBehaviour
 
     private void Start()
     {
-        _characterHealth.OnDeath += TriggerDeathAnimation;
+        _characterHealth.OnStartDeath += TriggerDeathAnimation;
     }
 
     void TriggerDeathAnimation()

@@ -7,7 +7,7 @@ public class DatabasesManager : MonoBehaviour
     // Fields //
 
     [SerializeField] private EquipementDatabase _equipementDatabase;
-    [SerializeField] private EnemyDatabase _enemiesDatabase;
+    [SerializeField] private EnemyDatabase _enemyDatabase;
 
     // Instance //
 
@@ -17,7 +17,9 @@ public class DatabasesManager : MonoBehaviour
     // Properties //
 
     #region Properties
-    public EquipementDatabase EquipementDatabase { get => _equipementDatabase; }
+    public EquipementDatabase EquipementDatabase  => _equipementDatabase;
+    public EnemyDatabase EnemyDatabase => _enemyDatabase;
+
     #endregion
 
     private void Awake()

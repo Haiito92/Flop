@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PlayerResourcesUI : MonoBehaviour
+public class ResourcesUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _goldsText;
 
-    [SerializeField] PlayerResources _playerRessources;
+    [SerializeField] ResourcesInventory _resources;
 
     private void Start()
     {
-        _playerRessources.OnGoldChanged += UpdateGolds;
+        _resources = Inventory.Instance.ResourcesInventory;
+        _resources.OnGoldChanged += UpdateGolds;
 
-        UpdateGolds(_playerRessources.Golds);
+        UpdateGolds(_resources.Gold);
     }
 
     void UpdateGolds(long value)

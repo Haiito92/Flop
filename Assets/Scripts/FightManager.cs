@@ -3,20 +3,28 @@ using UnityEngine;
 
 public class FightManager : MonoBehaviour
 {
-    //Refs Databases
+    //Databases
+    int _enemyDataIndex = 0;
 
-    
-    //Ref Game objects
-    [SerializeField] PlayerAttack _playerAttack;
+    //Refs Scene objects
+    [SerializeField] CharacterAttack _playerAttack;
+    [SerializeField] CharacterHealth _playerHealth;
+    [SerializeField] Transform _enemySpot;
+
+    //Refs UI
+    [SerializeField] HealthBar _enemyHealthBar;
+
+    //Prefabs
+    [SerializeField] GameObject _enemyController;
 
     // GameStatus Fields
     private int _currentBossFight = 1;
     private int _currentSegment = 1;
 
     // GameEvents
-    public Action OnNextSegment;
-    public Action OnNextBossFight;
-    public Action OnResetBossFight;
+    public event Action OnNextSegment;
+    public event Action OnNextBossFight;
+    public event Action OnResetBossFight;
 
     #region Properties
     public int CurrentBossFight
@@ -59,9 +67,31 @@ public class FightManager : MonoBehaviour
         InitSingleton();
     }
 
+    void SpawnNewEnemy()
+    {
+        EnemyData tempData = DatabasesManager.Instance.EnemyDatabase.EnemyDatas[_enemyDataIndex];
+        GameObject tempGo = Instantiate(_enemyController, _enemySpot);
+
+        tempGo.GetComponent<EnemyInitializer>().Initialize(tempData, _playerHealth);
+
+        CharacterHealth enemyHealth = tempGo.GetComponent<CharacterHealth>();
+
+        _enemyHealthBar.SetNewCharacter(enemyHealth);
+
+        _playerAttack.SetTarget(enemyHealth);
+
+        _enemyDataIndex = (_enemyDataIndex + 1) % DatabasesManager.Instance.EnemyDatabase.EnemyDatas.Count;
+    }
+
+    private void Start()
+    {
+        SpawnNewEnemy();
+    }
+
     public void ToNextSegment()
     {
         CurrentSegment++;
+        SpawnNewEnemy();
         OnNextSegment?.Invoke();
         if (CurrentSegment == 11)
         {
