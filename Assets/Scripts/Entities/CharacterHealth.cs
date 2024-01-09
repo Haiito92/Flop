@@ -29,6 +29,7 @@ public class CharacterHealth : MonoBehaviour
 
     //Events
     public event Action<long, long> OnHealthChange;
+    public event Action OnDeath;
 
 
     private void Awake()
@@ -54,13 +55,13 @@ public class CharacterHealth : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            Die();
+            _characterAttack.StopIdleAttack();
+            OnDeath?.Invoke();
         }
     }
     public virtual void Die()
     {
-        _characterAttack.StartIdleAttack();
-        ResetCharacter();
+        Destroy(GetComponentInParent<Transform>().gameObject);
     }
 
 

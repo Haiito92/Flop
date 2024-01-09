@@ -20,6 +20,11 @@ public class CharacterAttack : MonoBehaviour
         StartIdleAttack();
     }
 
+    public void SetTarget(CharacterHealth target)
+    {
+        _target = target;
+    }
+
     public void Attack(long damage)
     {
         if (!_target.IsAlive) return;

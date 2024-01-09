@@ -9,10 +9,10 @@ public class EnemyHealth : CharacterHealth
 
     public override void Die()
     {
-        base.Die();
-
         _playerResources.AddGold(_goldDropped);
 
-        GameManager.Instance.ToNextSegment();
+        FightManager.Instance.ToNextSegment();
+
+        base.Die();
     }
 }
