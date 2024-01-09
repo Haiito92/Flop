@@ -7,6 +7,7 @@ public class DatabasesManager : MonoBehaviour
     // Fields //
 
     [SerializeField] private EquipementDatabase _equipementDatabase;
+    [SerializeField] private EnemyDatabase _enemiesDatabase;
 
     // Instance //
 

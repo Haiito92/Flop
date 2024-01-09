@@ -33,18 +33,18 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.OnNextSegment += UpdateSegmentUI;
-        GameManager.Instance.OnNextBossFight += UpdateBossFightUI;
+        FightManager.Instance.OnNextSegment += UpdateSegmentUI;
+        FightManager.Instance.OnNextBossFight += UpdateBossFightUI;
     }
 
     void UpdateSegmentUI()
     {
-        _segmentNumber.text = "Segment : " + GameManager.Instance.CurrentSegment.ToString();
+        _segmentNumber.text = "Segment : " + FightManager.Instance.CurrentSegment.ToString();
     }
 
     public void UpdateBossFightUI()
     {
-        _bossFightNumber.text = "BossFight : " + GameManager.Instance.CurrentBossFight.ToString();
+        _bossFightNumber.text = "BossFight : " + FightManager.Instance.CurrentBossFight.ToString();
         UpdateSegmentUI();
     }
 }

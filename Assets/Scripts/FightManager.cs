@@ -1,9 +1,13 @@
 using System;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class FightManager : MonoBehaviour
 {
+    //Refs Databases
+
+    
     //Ref Game objects
+    [SerializeField] PlayerAttack _playerAttack;
 
     // GameStatus Fields
     private int _currentBossFight = 1;
@@ -35,8 +39,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Singleton
-    private static GameManager _instance;
-    public static GameManager Instance => _instance;
+    private static FightManager _instance;
+    public static FightManager Instance => _instance;
     void InitSingleton()
     {
         if (_instance != null && _instance != this)
@@ -58,15 +62,12 @@ public class GameManager : MonoBehaviour
     public void ToNextSegment()
     {
         CurrentSegment++;
+        OnNextSegment?.Invoke();
         if (CurrentSegment == 11)
         {
+ 
             ToNextBossFight();
         }
-        else
-        {
-            OnNextSegment?.Invoke();
-        }
-
     }
 
     public void ToNextBossFight()
