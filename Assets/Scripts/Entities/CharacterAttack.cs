@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour, IAttacker
+public class CharacterAttack : MonoBehaviour
 {
     [SerializeField] long _damage;
 
     [SerializeField] float _attackSpeed = 1.0f;
     Coroutine _idleAttack;
 
-    IAttackable _target;
+    [SerializeField] CharacterHealth _target;
 
     //Properties
     #region Properties
-    public IAttackable Target {  get { return _target; } set { _target = value; } }
     #endregion
+
+    private void Start()
+    {
+        StartIdleAttack();
+    }
 
     public void Attack(long damage)
     {
@@ -25,19 +29,19 @@ public class Entity : MonoBehaviour, IAttacker
 
     public void StartIdleAttack()
     {
-        if(_idleAttack == null) _idleAttack = StartCoroutine(IdleAttack());
+        if (_idleAttack == null) _idleAttack = StartCoroutine(IdleAttack());
     }
 
     IEnumerator IdleAttack()
     {
         while (true)
         {
-            if(_target != null) Attack(_damage);
+            if (_target != null) Attack(_damage);
             yield return new WaitForSeconds(_attackSpeed);
         }
     }
 
-    protected void StopIdleAttack()
+    public void StopIdleAttack()
     {
         if (_idleAttack != null)
         {

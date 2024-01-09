@@ -4,8 +4,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //Ref Game objects
-    [SerializeField] Player _player;
-    [SerializeField] Enemy _enemy;
 
     // GameStatus Fields
     private int _currentBossFight = 1;
@@ -55,19 +53,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         InitSingleton();
-    }
-
-    private void Start()
-    {
-        StartSegment();
-    }
-
-    void StartSegment()
-    {
-        _player.Target = _enemy;
-        _enemy.Target = _player;
-        _player.StartIdleAttack();
-        _enemy.StartIdleAttack();
     }
 
     public void ToNextSegment()

@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : Entity, IAttacker, IAttackable
+public class CharacterHealth : MonoBehaviour
 {
     [SerializeField] long _maxHealth = 1;
     long _currentHealth;
-    [SerializeField] HealthBar _healthBar;
 
+    [SerializeField] CharacterAttack _characterAttack;
+
+    private void Reset()
+    {
+        _characterAttack = GetComponent<CharacterAttack>();
+    }
 
     //Properties
     public long CurrentHealth
@@ -23,7 +28,7 @@ public class Character : Entity, IAttacker, IAttackable
     public bool IsAlive { get { return CurrentHealth >= 0; } set { } }
 
     //Events
-    Action<long, long> OnHealthChange;
+    public event Action<long, long> OnHealthChange;
 
 
     private void Awake()
@@ -33,7 +38,6 @@ public class Character : Entity, IAttacker, IAttackable
 
     void Init()
     {
-        OnHealthChange += _healthBar.SetHealthFill;
         CurrentHealth = _maxHealth;
     }
 
@@ -53,18 +57,16 @@ public class Character : Entity, IAttacker, IAttackable
             Die();
         }
     }
-
     public virtual void Die()
     {
-        StopIdleAttack();
+        _characterAttack.StartIdleAttack();
         ResetCharacter();
     }
+
 
     public virtual void ResetCharacter()
     {
         CurrentHealth = _maxHealth;
-        StartIdleAttack();
+        _characterAttack.StartIdleAttack();
     }
-
-
 }
