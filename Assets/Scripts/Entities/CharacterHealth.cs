@@ -8,11 +8,11 @@ public class CharacterHealth : MonoBehaviour
     [SerializeField] long _maxHealth = 1;
     long _currentHealth;
 
-    [SerializeField] CharacterAttack _characterAttack;
+    [SerializeField] IdleAttack _characterAttack;
 
     private void Reset()
     {
-        _characterAttack = GetComponent<CharacterAttack>();
+        _characterAttack = GetComponent<IdleAttack>();
     }
 
     //Events

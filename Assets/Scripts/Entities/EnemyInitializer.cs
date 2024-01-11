@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyInitializer : MonoBehaviour
 {
-    [SerializeField] CharacterAttack _characterAttack;
+    [SerializeField] IdleAttack _characterAttack;
     [SerializeField] Animator _animator;
 
     private void Reset()
     {
-        _characterAttack = GetComponent<CharacterAttack>();
+        _characterAttack = GetComponent<IdleAttack>();
         _animator = GetComponentInChildren<Animator>();
     }
 

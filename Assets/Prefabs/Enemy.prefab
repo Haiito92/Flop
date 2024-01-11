@@ -131,9 +131,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2277506475897701440}
   - component: {fileID: 6332670493751925040}
-  - component: {fileID: 3806309511954923488}
   - component: {fileID: 6358400556459157021}
   - component: {fileID: -3457523877641646809}
+  - component: {fileID: -6300822906325177885}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -169,23 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d953216a14a0523429d2509636e92da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterAttack: {fileID: 3806309511954923488}
+  _characterAttack: {fileID: -6300822906325177885}
   _animator: {fileID: 851168714550214478}
---- !u!114 &3806309511954923488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838325268925012948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3453fe4a21ca0409f18dac565efb13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 10
-  _attackSpeed: 1
-  _target: {fileID: 0}
 --- !u!114 &6358400556459157021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _characterAttack: {fileID: 3806309511954923488}
+  _characterAttack: {fileID: -6300822906325177885}
 --- !u!114 &-3457523877641646809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,3 +199,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _goldDropped: 10
   _enemyHealth: {fileID: 6358400556459157021}
+--- !u!114 &-6300822906325177885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838325268925012948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cf81f60a30fa6468aadd641c0bb370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+  _target: {fileID: 0}
+  _attackSpeed: 1

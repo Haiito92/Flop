@@ -244,6 +244,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _equipementDatabase: {fileID: 11400000, guid: 91174e35e5ade0643a59f8662d949135, type: 2}
   _enemyDatabase: {fileID: 11400000, guid: f8ac7097570d82d4e9ed3cb81da05027, type: 2}
+--- !u!1 &153048700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 153048701}
+  - component: {fileID: 153048702}
+  - component: {fileID: 153048704}
+  - component: {fileID: 153048703}
+  m_Layer: 0
+  m_Name: Actions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &153048701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153048700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 620318742}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &153048702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153048700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0895d2a5039a0894ca2e920abf8960a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackList:
+  - {fileID: 153048704}
+  - {fileID: 153048703}
+--- !u!114 &153048703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153048700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fe94c41ff120d4696a4169d4391239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+  _target: {fileID: 0}
+--- !u!114 &153048704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153048700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cf81f60a30fa6468aadd641c0bb370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+  _target: {fileID: 0}
+  _attackSpeed: 1
 --- !u!1 &207681155
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +745,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 620318742}
-  - component: {fileID: 620318751}
   - component: {fileID: 620318750}
   m_Layer: 0
   m_Name: Player
@@ -690,6 +767,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 863344700}
+  - {fileID: 153048701}
   m_Father: {fileID: 1949528412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &620318750
@@ -705,23 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1000
-  _characterAttack: {fileID: 620318751}
---- !u!114 &620318751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620318741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32fe94c41ff120d4696a4169d4391239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 10
-  _attackSpeed: 1
-  _target: {fileID: 0}
-  _clickDamage: 10
+  _characterAttack: {fileID: 0}
 --- !u!1 &700649803
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +1045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -82.52313, y: -1.222992}
+  m_AnchoredPosition: {x: -82.52319, y: -1.2230225}
   m_SizeDelta: {x: -184.0127, y: -23.2811}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761748181
@@ -1407,7 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afe1a60a737e2549ba3198949657796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAttack: {fileID: 620318751}
+  _playerAttacks: {fileID: 153048702}
   _playerHealth: {fileID: 620318750}
   _enemySpot: {fileID: 880631641}
   _enemyHealthBar: {fileID: 903819450}
@@ -1942,7 +2004,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _attackSpeed: 1
   _target: {fileID: 0}
 --- !u!1 &1727605190
 GameObject:
@@ -2196,9 +2257,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 620318751}
-          m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
-          m_MethodName: ClickAttack
+        - m_Target: {fileID: 153048703}
+          m_TargetAssemblyTypeName: ClickAttack, Assembly-CSharp
+          m_MethodName: OnClickAttack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -1,43 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class CharacterAttack : MonoBehaviour
+public class IdleAttack : BaseAttack
 {
-    [SerializeField] long _damage;
-
     [SerializeField] float _attackSpeed = 1.0f;
     Coroutine _idleAttack;
-
-    [SerializeField] CharacterHealth _target;
-
-    //Properties
-    #region Properties
-    #endregion
 
     private void Start()
     {
         StartIdleAttack();
     }
 
-    public void SetTarget(CharacterHealth target)
-    {
-        _target = target;
-    }
-
-    public void Attack(long damage)
-    {
-        if (!_target.IsAlive) return;
-
-        _target.TakeDamage(damage);
-    }
-
     public void StartIdleAttack()
     {
-        if (_idleAttack == null) _idleAttack = StartCoroutine(IdleAttack());
+        if (_idleAttack == null) _idleAttack = StartCoroutine(IdleAttackCoroutine());
     }
 
-    IEnumerator IdleAttack()
+    IEnumerator IdleAttackCoroutine()
     {
         while (true)
         {
