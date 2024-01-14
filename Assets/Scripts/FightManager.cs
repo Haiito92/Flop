@@ -7,7 +7,7 @@ public class FightManager : MonoBehaviour
     int _enemyDataIndex = 0;
 
     //Refs Scene objects
-    [SerializeField] AttackManager _playerAttacks;
+    [SerializeField] PlayerBrain _playerBrain;
     [SerializeField] CharacterHealth _playerHealth;
     [SerializeField] Transform _enemySpot;
 
@@ -78,7 +78,7 @@ public class FightManager : MonoBehaviour
 
         _enemyHealthBar.SetNewCharacter(enemyHealth);
 
-        _playerAttacks.SetAllTargets(enemyHealth);
+        _playerBrain.SetTarget(enemyHealth);
 
         _enemyDataIndex = (_enemyDataIndex + 1) % DatabasesManager.Instance.EnemyDatabase.EnemyDatas.Count;
     }

@@ -8,11 +8,11 @@ public class CharacterHealth : MonoBehaviour
     [SerializeField] long _maxHealth = 1;
     long _currentHealth;
 
-    [SerializeField] IdleAttack _characterAttack;
+    [SerializeField] IdleBrain _characterAttack;
 
     private void Reset()
     {
-        _characterAttack = GetComponent<IdleAttack>();
+        _characterAttack = GetComponent<IdleBrain>();
     }
 
     //Events
@@ -60,7 +60,7 @@ public class CharacterHealth : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            _characterAttack.StopIdleAttack();
+            _characterAttack.StopAttackRoutine();
             OnStartDeath?.Invoke();
         }
     }
@@ -74,6 +74,6 @@ public class CharacterHealth : MonoBehaviour
     public virtual void ResetCharacter()
     {
         CurrentHealth = _maxHealth;
-        _characterAttack.StartIdleAttack();
+        _characterAttack.StartAttackRoutine();
     }
 }

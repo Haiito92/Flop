@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 6332670493751925040}
   - component: {fileID: 6358400556459157021}
   - component: {fileID: -3457523877641646809}
-  - component: {fileID: -6300822906325177885}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -155,6 +154,8 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4065308536495848845}
+  - {fileID: 416312322464039254}
+  - {fileID: 1599662787945324356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6332670493751925040
@@ -169,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d953216a14a0523429d2509636e92da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterAttack: {fileID: -6300822906325177885}
+  _enemyBrain: {fileID: 7035610976194028120}
   _animator: {fileID: 851168714550214478}
 --- !u!114 &6358400556459157021
 MonoBehaviour:
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _characterAttack: {fileID: -6300822906325177885}
+  _characterAttack: {fileID: 7035610976194028120}
 --- !u!114 &-3457523877641646809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,18 +200,98 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _goldDropped: 10
   _enemyHealth: {fileID: 6358400556459157021}
---- !u!114 &-6300822906325177885
+--- !u!1 &2778839553803202333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416312322464039254}
+  - component: {fileID: 6414421974808427843}
+  m_Layer: 0
+  m_Name: Actions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416312322464039254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778839553803202333}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2277506475897701440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6414421974808427843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838325268925012948}
+  m_GameObject: {fileID: 2778839553803202333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3453fe4a21ca0409f18dac565efb13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+--- !u!1 &6014345713232783741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599662787945324356}
+  - component: {fileID: 7035610976194028120}
+  m_Layer: 0
+  m_Name: Brain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1599662787945324356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014345713232783741}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2277506475897701440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7035610976194028120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014345713232783741}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02cf81f60a30fa6468aadd641c0bb370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
   _target: {fileID: 0}
+  _attackList:
+  - {fileID: 6414421974808427843}
+  _basicAttack: {fileID: 6414421974808427843}
   _attackSpeed: 1
+  _actions: {fileID: 2778839553803202333}

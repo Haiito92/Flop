@@ -253,8 +253,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153048701}
-  - component: {fileID: 153048702}
   - component: {fileID: 153048704}
+  - component: {fileID: 153048705}
   - component: {fileID: 153048703}
   m_Layer: 0
   m_Name: Actions
@@ -278,21 +278,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 620318742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &153048702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153048700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0895d2a5039a0894ca2e920abf8960a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackList:
-  - {fileID: 153048704}
-  - {fileID: 153048703}
 --- !u!114 &153048703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _target: {fileID: 0}
 --- !u!114 &153048704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,12 +300,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 153048700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02cf81f60a30fa6468aadd641c0bb370, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e3453fe4a21ca0409f18dac565efb13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _target: {fileID: 0}
-  _attackSpeed: 1
+--- !u!114 &153048705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153048700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2030ccb894c84e743999f4150a2ace52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 20
 --- !u!1 &207681155
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +763,7 @@ Transform:
   m_Children:
   - {fileID: 863344700}
   - {fileID: 153048701}
+  - {fileID: 920097119}
   m_Father: {fileID: 1949528412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &620318750
@@ -1350,6 +1346,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fill: {fileID: 21574247}
   _character: {fileID: 0}
+--- !u!1 &920097118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920097119}
+  - component: {fileID: 920097120}
+  m_Layer: 0
+  m_Name: PlayerBrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &920097119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920097118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 620318742}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920097120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920097118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0895d2a5039a0894ca2e920abf8960a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _attackList:
+  - {fileID: 153048704}
+  - {fileID: 153048705}
+  - {fileID: 153048703}
+  _basicAttack: {fileID: 153048704}
+  _attackSpeed: 1
+  _actions: {fileID: 153048700}
+  _specialAttack: {fileID: 153048705}
+  _maxSpecialResource: 5
+  _specialResourceAdded: 1
 --- !u!1 &961251400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afe1a60a737e2549ba3198949657796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAttacks: {fileID: 153048702}
+  _playerBrain: {fileID: 920097120}
   _playerHealth: {fileID: 620318750}
   _enemySpot: {fileID: 880631641}
   _enemyHealthBar: {fileID: 903819450}
@@ -2004,7 +2055,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _target: {fileID: 0}
 --- !u!1 &1727605190
 GameObject:
   m_ObjectHideFlags: 0

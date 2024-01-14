@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickAttack : BaseAttack
+public class SpecialAttack : BaseAttack
 {
-    public void OnClickAttack(CharacterHealth target)
+    public void DoSpecialAttack(CharacterHealth target)
     {
         Attack(target, _damage);
     }

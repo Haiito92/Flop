@@ -6,23 +6,16 @@ public class BaseAttack : MonoBehaviour
 {
     [SerializeField] protected long _damage;
 
-    [SerializeField] protected CharacterHealth _target;
-
     //Properties
     #region Properties
+    public long Damage { get => _damage; set => _damage = value; }
     #endregion
 
-
-    public void SetTarget(CharacterHealth target)
+    public void Attack(CharacterHealth target, long damage)
     {
-        _target = target;
-    }
+        if (!target.IsAlive) return;
 
-    public void Attack(long damage)
-    {
-        if (!_target.IsAlive) return;
-
-        _target.TakeDamage(damage);
+        target.TakeDamage(damage);
     }
 
     
