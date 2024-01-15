@@ -7,7 +7,7 @@ public class FightManager : MonoBehaviour
     int _enemyDataIndex = 0;
 
     //Refs Scene objects
-    [SerializeField] PlayerBrain _playerBrain;
+    [SerializeField] PlayerBrains _playerBrain;
     [SerializeField] CharacterHealth _playerHealth;
     [SerializeField] Transform _enemySpot;
 
@@ -22,8 +22,8 @@ public class FightManager : MonoBehaviour
     private int _currentSegment = 1;
 
     // GameEvents
-    public event Action OnNextSegment;
-    public event Action OnNextBossFight;
+    public event Action<int> OnNextSegment;
+    public event Action<int,int> OnNextBossFight;
     public event Action OnResetBossFight;
 
     #region Properties
@@ -78,7 +78,7 @@ public class FightManager : MonoBehaviour
 
         _enemyHealthBar.SetNewCharacter(enemyHealth);
 
-        _playerBrain.SetTarget(enemyHealth);
+        _playerBrain.SetCurrentBrainTarget(enemyHealth);
 
         _enemyDataIndex = (_enemyDataIndex + 1) % DatabasesManager.Instance.EnemyDatabase.EnemyDatas.Count;
     }
@@ -91,20 +91,20 @@ public class FightManager : MonoBehaviour
     public void ToNextSegment()
     {
         CurrentSegment++;
-        SpawnNewEnemy();
-        OnNextSegment?.Invoke();
+        OnNextSegment?.Invoke(CurrentSegment);
         if (CurrentSegment == 11)
         {
  
             ToNextBossFight();
         }
+        SpawnNewEnemy();
     }
 
     public void ToNextBossFight()
     {
         CurrentBossFight++;
         CurrentSegment = 1;
-        OnNextBossFight?.Invoke();
+        OnNextBossFight?.Invoke(CurrentBossFight, CurrentSegment);
     }
     public void ResetBossFight()
     {

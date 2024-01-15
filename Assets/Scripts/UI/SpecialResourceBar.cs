@@ -8,16 +8,33 @@ public class SpecialResourceBar : MonoBehaviour
     //Refs to components out of go
     [SerializeField] Image _fill;
 
-    [SerializeField] PlayerBrain _playerBrain;
+    [SerializeField] PlayerBrains _playerBrain;
+    CharacterBrain _currentBrain;
 
     private void Start()
     {
-        UpdateFill(_playerBrain.CurrentSpecialResource, _playerBrain.MaxSpecialResource);
-        _playerBrain.OnSpecialResourceChange += UpdateFill;
+        _playerBrain.OnBrainChange += SetNewBrain;
+
+        _currentBrain = _playerBrain.CurrentBrain;
+        UpdateFill(_currentBrain.CurrentSpecialResource, _currentBrain.MaxSpecialResource);
+        _currentBrain.OnSpecialResourceChange += UpdateFill;
     }
 
     void UpdateFill(float currentValue, float maxValue)
     {
         _fill.fillAmount = currentValue / maxValue;
+    }
+
+    void SetNewBrain(CharacterBrain newBrain)
+    {
+        _currentBrain.OnSpecialResourceChange -= UpdateFill;
+        _currentBrain = newBrain;
+        _currentBrain.OnSpecialResourceChange += UpdateFill;
+        UpdateFill(_currentBrain.CurrentSpecialResource, _currentBrain.MaxSpecialResource);
+    }
+
+    private void OnDestroy()
+    {
+        _currentBrain.OnSpecialResourceChange -= UpdateFill;
     }
 }

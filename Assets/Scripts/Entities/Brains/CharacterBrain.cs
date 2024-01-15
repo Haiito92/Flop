@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class PlayerBrain : BasicBrain
+public class CharacterBrain : BasicBrain
 {
     //Fields
     [SerializeField] SpecialAttack _specialAttack;
@@ -46,20 +46,19 @@ public class PlayerBrain : BasicBrain
             {
                 _specialAttack.DoSpecialAttack(_target);
                 _currentSpecialResource = 0.0f;
-                OnSpecialResourceChange.Invoke(_currentSpecialResource, _maxSpecialResource);
+                OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
             }
             else
             {
                 _basicAttack.Attack(_target, _basicAttack.Damage);
                 _currentSpecialResource = Mathf.Clamp(_currentSpecialResource + _specialResourceAdded, 0.0f, _maxSpecialResource);
-                OnSpecialResourceChange.Invoke(_currentSpecialResource, _maxSpecialResource);
+                OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
             }
             yield return new WaitForSeconds(_attackSpeed);
         }
     }
 
-    [Button]
-    public override void FindAttacks()
+    protected override void FindAttacks()
     {
         base.FindAttacks();
         _specialAttack = _actions.GetComponent<SpecialAttack>();

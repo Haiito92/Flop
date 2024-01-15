@@ -37,11 +37,13 @@ public abstract class BasicBrain : MonoBehaviour
         }
     }
 
-    [Button]
-    public virtual void FindAttacks()
+    protected virtual void FindAttacks()
     {
         _attackList.Clear();
         _attackList = _actions.GetComponents<BaseAttack>().ToList();
         _basicAttack = _actions.GetComponent<BaseAttack>();
     }
+
+    [Button]
+    public void FindAttack() => FindAttacks();
 }

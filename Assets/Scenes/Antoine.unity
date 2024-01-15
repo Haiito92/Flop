@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fill: {fileID: 2048852357}
-  _playerBrain: {fileID: 920097120}
+  _playerBrain: {fileID: 920097122}
 --- !u!1 &407441318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1407,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920097119}
+  - component: {fileID: 920097122}
   - component: {fileID: 920097120}
+  - component: {fileID: 920097121}
   m_Layer: 0
   m_Name: PlayerBrain
   m_TagString: Untagged
@@ -1453,6 +1455,43 @@ MonoBehaviour:
   _specialAttack: {fileID: 153048705}
   _maxSpecialResource: 5
   _specialResourceAdded: 1
+--- !u!114 &920097121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920097118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0895d2a5039a0894ca2e920abf8960a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _attackList:
+  - {fileID: 153048704}
+  - {fileID: 153048705}
+  - {fileID: 153048703}
+  _basicAttack: {fileID: 153048704}
+  _attackSpeed: 0.5
+  _actions: {fileID: 153048700}
+  _specialAttack: {fileID: 153048705}
+  _maxSpecialResource: 4
+  _specialResourceAdded: 2
+--- !u!114 &920097122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920097118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af1969c153285241bc972f1dca6e73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _brainOne: {fileID: 920097120}
+  _brainTwo: {fileID: 920097121}
 --- !u!1 &961251400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afe1a60a737e2549ba3198949657796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBrain: {fileID: 920097120}
+  _playerBrain: {fileID: 920097122}
   _playerHealth: {fileID: 620318750}
   _enemySpot: {fileID: 880631641}
   _enemyHealthBar: {fileID: 903819450}
@@ -2438,10 +2477,10 @@ MonoBehaviour:
         - m_Target: {fileID: 153048703}
           m_TargetAssemblyTypeName: ClickAttack, Assembly-CSharp
           m_MethodName: OnClickAttack
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: CharacterHealth, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

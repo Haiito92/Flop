@@ -37,14 +37,14 @@ public class UIManager : MonoBehaviour
         FightManager.Instance.OnNextBossFight += UpdateBossFightUI;
     }
 
-    void UpdateSegmentUI()
+    void UpdateSegmentUI(int currentSegment)
     {
-        _segmentNumber.text = "Segment : " + FightManager.Instance.CurrentSegment.ToString();
+        _segmentNumber.text = "Segment : " + currentSegment;
     }
 
-    public void UpdateBossFightUI()
+    public void UpdateBossFightUI(int currentBossFight, int currentSegment)
     {
-        _bossFightNumber.text = "BossFight : " + FightManager.Instance.CurrentBossFight.ToString();
-        UpdateSegmentUI();
+        _bossFightNumber.text = "BossFight : " + currentBossFight;
+        UpdateSegmentUI(currentSegment);
     }
 }
