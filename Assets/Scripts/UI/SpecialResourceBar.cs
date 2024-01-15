@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class SpecialResourceBar : MonoBehaviour
     {
         _playerBrain.OnBrainChange += SetNewBrain;
 
-        _currentBrain = _playerBrain.CurrentBrain;
+        SetNewBrain(_playerBrain.CurrentBrain);
         UpdateFill(_currentBrain.CurrentSpecialResource, _currentBrain.MaxSpecialResource);
         _currentBrain.OnSpecialResourceChange += UpdateFill;
     }
@@ -27,8 +28,9 @@ public class SpecialResourceBar : MonoBehaviour
 
     void SetNewBrain(CharacterBrain newBrain)
     {
-        _currentBrain.OnSpecialResourceChange -= UpdateFill;
+        if(_currentBrain != null) _currentBrain.OnSpecialResourceChange -= UpdateFill;
         _currentBrain = newBrain;
+        _fill.color = _currentBrain.SpecialResourceColor;
         _currentBrain.OnSpecialResourceChange += UpdateFill;
         UpdateFill(_currentBrain.CurrentSpecialResource, _currentBrain.MaxSpecialResource);
     }

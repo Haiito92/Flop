@@ -1455,6 +1455,7 @@ MonoBehaviour:
   _specialAttack: {fileID: 153048705}
   _maxSpecialResource: 5
   _specialResourceAdded: 1
+  SpecialResourceColor: {r: 0.9339623, g: 0.3213962, b: 0.20617655, a: 1}
 --- !u!114 &920097121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,6 +1479,7 @@ MonoBehaviour:
   _specialAttack: {fileID: 153048705}
   _maxSpecialResource: 4
   _specialResourceAdded: 2
+  SpecialResourceColor: {r: 0.13294764, g: 0.42358115, b: 0.9150943, a: 1}
 --- !u!114 &920097122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2581,7 +2583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f543bfa105770414d9b320f419c30dce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fc4ffc47c09dda4e9f49f26d6554517, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

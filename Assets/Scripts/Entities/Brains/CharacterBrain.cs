@@ -21,6 +21,7 @@ public class CharacterBrain : BasicBrain
     #region Properties
     public float CurrentSpecialResource => _currentSpecialResource;
     public float MaxSpecialResource => _maxSpecialResource;
+    public Color SpecialResourceColor;
     #endregion
 
     private void Awake()
