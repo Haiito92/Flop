@@ -30,7 +30,7 @@ public class CharacterHealth : MonoBehaviour
             OnHealthChange?.Invoke(_currentHealth, _maxHealth);
         }
     }
-    public bool IsAlive { get { return CurrentHealth >= 0; } set { } }
+    public bool IsAlive { get { return CurrentHealth > 0; } set { } }
 
     private void Awake()
     {

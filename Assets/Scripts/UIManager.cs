@@ -42,9 +42,8 @@ public class UIManager : MonoBehaviour
         _segmentNumber.text = "Segment : " + currentSegment;
     }
 
-    public void UpdateBossFightUI(int currentBossFight, int currentSegment)
+    public void UpdateBossFightUI(int currentBossFight)
     {
         _bossFightNumber.text = "BossFight : " + currentBossFight;
-        UpdateSegmentUI(currentSegment);
     }
 }

@@ -1473,7 +1473,7 @@ MonoBehaviour:
   - {fileID: 153048705}
   - {fileID: 153048703}
   _basicAttack: {fileID: 153048704}
-  _attackSpeed: 0.5
+  _attackSpeed: 1
   _actions: {fileID: 153048700}
   _specialAttack: {fileID: 153048705}
   _maxSpecialResource: 4

@@ -23,7 +23,7 @@ public class FightManager : MonoBehaviour
 
     // GameEvents
     public event Action<int> OnNextSegment;
-    public event Action<int,int> OnNextBossFight;
+    public event Action<int> OnNextBossFight;
     public event Action OnResetBossFight;
 
     #region Properties
@@ -91,20 +91,19 @@ public class FightManager : MonoBehaviour
     public void ToNextSegment()
     {
         CurrentSegment++;
-        OnNextSegment?.Invoke(CurrentSegment);
         if (CurrentSegment == 11)
         {
- 
+            CurrentSegment = 1;
             ToNextBossFight();
         }
+        OnNextSegment?.Invoke(CurrentSegment);
         SpawnNewEnemy();
     }
 
     public void ToNextBossFight()
     {
         CurrentBossFight++;
-        CurrentSegment = 1;
-        OnNextBossFight?.Invoke(CurrentBossFight, CurrentSegment);
+        OnNextBossFight?.Invoke(CurrentBossFight);
     }
     public void ResetBossFight()
     {
