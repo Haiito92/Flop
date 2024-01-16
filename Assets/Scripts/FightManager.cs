@@ -7,7 +7,7 @@ public class FightManager : MonoBehaviour
     int _enemyDataIndex = 0;
 
     //Refs Scene objects
-    [SerializeField] PlayerBrains _playerBrain;
+    [SerializeField] BrainBinding _playerBrain;
     [SerializeField] CharacterHealth _playerHealth;
     [SerializeField] Transform _enemySpot;
 

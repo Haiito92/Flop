@@ -3,13 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBrains : MonoBehaviour
+public class BrainBinding : MonoBehaviour
 {
     //Refs
-    [SerializeField] CharacterBrain _brainOne;
-    [SerializeField] CharacterBrain _brainTwo;
-
-    CharacterBrain _currentBrain;
+    [SerializeField] CharacterBrain _currentBrain;
 
     FightManager _fightManager;
 
@@ -20,9 +17,9 @@ public class PlayerBrains : MonoBehaviour
     public CharacterBrain CurrentBrain => _currentBrain;
     #endregion
 
-    private void Awake()
+    private void Reset()
     {
-        _currentBrain = _brainOne;
+        _currentBrain = GetComponent<CharacterBrain>();
     }
 
     private void Start()
@@ -41,11 +38,11 @@ public class PlayerBrains : MonoBehaviour
     {
         if(currentSegment == 1)
         {
-            ChangeBrain(_brainOne);
+            _currentBrain.ChangePhase(1);
         }
-        if(currentSegment == 5)
+        if(currentSegment == 6)
         {
-            ChangeBrain(_brainTwo);
+            _currentBrain.ChangePhase(2);
         }
     }
 

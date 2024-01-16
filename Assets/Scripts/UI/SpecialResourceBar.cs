@@ -9,7 +9,7 @@ public class SpecialResourceBar : MonoBehaviour
     //Refs to components out of go
     [SerializeField] Image _fill;
 
-    [SerializeField] PlayerBrains _playerBrain;
+    [SerializeField] BrainBinding _playerBrain;
     CharacterBrain _currentBrain;
 
     private void Start()
@@ -37,6 +37,8 @@ public class SpecialResourceBar : MonoBehaviour
 
     private void OnDestroy()
     {
+        _playerBrain.OnBrainChange -= SetNewBrain;
+
         _currentBrain.OnSpecialResourceChange -= UpdateFill;
     }
 }

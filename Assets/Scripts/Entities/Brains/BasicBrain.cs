@@ -6,9 +6,8 @@ using UnityEngine;
 
 public abstract class BasicBrain : MonoBehaviour
 {
-    [SerializeField] protected CharacterHealth _target;
+    protected CharacterHealth _target;
 
-    [SerializeField] protected List<BaseAttack> _attackList = new List<BaseAttack>();
     [SerializeField] protected BaseAttack _basicAttack;
     [SerializeField] protected float _attackSpeed;
 
@@ -39,8 +38,6 @@ public abstract class BasicBrain : MonoBehaviour
 
     protected virtual void FindAttacks()
     {
-        _attackList.Clear();
-        _attackList = _actions.GetComponents<BaseAttack>().ToList();
         _basicAttack = _actions.GetComponent<BaseAttack>();
     }
 

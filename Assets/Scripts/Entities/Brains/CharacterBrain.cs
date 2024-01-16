@@ -9,18 +9,21 @@ using UnityEngine;
 public class CharacterBrain : BasicBrain
 {
     //Fields
-    [SerializeField] SpecialAttack _specialAttack;
+    [SerializeField] protected SpecialAttack _specialAttack;
 
-    [SerializeField] float _maxSpecialResource;
-    float _currentSpecialResource = 0.0f;
-    [SerializeField] float _specialResourceAdded;
+    [SerializeField] protected float _maxSpecialResource;
+    protected float _currentSpecialResource = 0.0f;
+
+    protected int _phase = 1;
 
     //Events for Dev
-    public event Action<float,float> OnSpecialResourceChange;
+    public Action<float,float> OnSpecialResourceChange;
 
     #region Properties
-    public float CurrentSpecialResource => _currentSpecialResource;
     public float MaxSpecialResource => _maxSpecialResource;
+    public float CurrentSpecialResource => _currentSpecialResource;
+    public int Phase { get => _phase; set => _phase = value; }
+
     public Color SpecialResourceColor;
     #endregion
 
@@ -36,27 +39,12 @@ public class CharacterBrain : BasicBrain
 
     protected override IEnumerator AttackRoutine()
     {
-        while (true)
-        {
-            if(_target == null)
-            {
-                yield return null;
-                continue;   
-            }
-            if (_currentSpecialResource >= _maxSpecialResource)
-            {
-                _specialAttack.DoSpecialAttack(_target);
-                _currentSpecialResource = 0.0f;
-                OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
-            }
-            else
-            {
-                _basicAttack.Attack(_target, _basicAttack.Damage);
-                _currentSpecialResource = Mathf.Clamp(_currentSpecialResource + _specialResourceAdded, 0.0f, _maxSpecialResource);
-                OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
-            }
-            yield return new WaitForSeconds(_attackSpeed);
-        }
+        throw new NotImplementedException();
+    }
+
+    public virtual void ChangePhase(int currentPhase)
+    {
+        Phase = currentPhase;
     }
 
     protected override void FindAttacks()

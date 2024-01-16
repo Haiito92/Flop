@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fill: {fileID: 2048852357}
-  _playerBrain: {fileID: 920097122}
+  _playerBrain: {fileID: 920097124}
 --- !u!1 &407441318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,11 +1407,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920097119}
-  - component: {fileID: 920097122}
-  - component: {fileID: 920097120}
-  - component: {fileID: 920097121}
+  - component: {fileID: 920097124}
+  - component: {fileID: 920097123}
   m_Layer: 0
-  m_Name: PlayerBrain
+  m_Name: PlayerBrains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1432,7 +1431,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 620318742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &920097120
+--- !u!114 &920097123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1441,22 +1440,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 920097118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0895d2a5039a0894ca2e920abf8960a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 284788b9850124043b10a54c9ab266a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _attackList:
-  - {fileID: 153048704}
-  - {fileID: 153048705}
-  - {fileID: 153048703}
   _basicAttack: {fileID: 153048704}
   _attackSpeed: 1
   _actions: {fileID: 153048700}
   _specialAttack: {fileID: 153048705}
-  _maxSpecialResource: 5
+  _maxSpecialResource: 10
+  SpecialResourceColor: {r: 1, g: 0.20432383, b: 0.14528298, a: 1}
   _specialResourceAdded: 1
-  SpecialResourceColor: {r: 0.9339623, g: 0.3213962, b: 0.20617655, a: 1}
---- !u!114 &920097121
+--- !u!114 &920097124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1465,35 +1459,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 920097118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0895d2a5039a0894ca2e920abf8960a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 755fa3022a44d584c970404d68590a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _attackList:
-  - {fileID: 153048704}
-  - {fileID: 153048705}
-  - {fileID: 153048703}
-  _basicAttack: {fileID: 153048704}
-  _attackSpeed: 1
-  _actions: {fileID: 153048700}
-  _specialAttack: {fileID: 153048705}
-  _maxSpecialResource: 4
-  _specialResourceAdded: 2
-  SpecialResourceColor: {r: 0.13294764, g: 0.42358115, b: 0.9150943, a: 1}
---- !u!114 &920097122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920097118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af1969c153285241bc972f1dca6e73e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _brainOne: {fileID: 920097120}
-  _brainTwo: {fileID: 920097121}
+  _currentBrain: {fileID: 920097123}
 --- !u!1 &961251400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,7 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afe1a60a737e2549ba3198949657796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBrain: {fileID: 920097122}
+  _playerBrain: {fileID: 920097124}
   _playerHealth: {fileID: 620318750}
   _enemySpot: {fileID: 880631641}
   _enemyHealthBar: {fileID: 903819450}
