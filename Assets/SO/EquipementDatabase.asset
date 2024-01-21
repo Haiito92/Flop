@@ -14,14 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _equipementDatas:
   - _name: Helmet
-    _description: none
+    _description: Chapeau !
     _sprite: {fileID: -1709219863, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
     _equipementType: 1
-  - _name: Chestplate
-    _description: none
+    _atk: 10
+    _def: 20
+  - _name: WOOOOW un plastron
+    _description: Plastron
     _sprite: {fileID: 574449848, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
     _equipementType: 2
+    _atk: 15
+    _def: 25
   - _name: Legs
-    _description: none
+    _description: Bot...
     _sprite: {fileID: 2001888223, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
     _equipementType: 3
+    _atk: 5
+    _def: 5
