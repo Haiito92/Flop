@@ -72,7 +72,7 @@ public class FightManager : MonoBehaviour
         EnemyData tempData = DatabasesManager.Instance.EnemyDatabase.EnemyDatas[_enemyDataIndex];
         GameObject tempGo = Instantiate(_enemyController, _enemySpot);
 
-        tempGo.GetComponent<EnemyInitializer>().Initialize(tempData, _playerHealth);
+        tempGo.GetComponent<EnemyInitializer>().Initialize(tempData, _playerHealth, CurrentBossFight, CurrentSegment);
 
         CharacterHealth enemyHealth = tempGo.GetComponent<CharacterHealth>();
 
