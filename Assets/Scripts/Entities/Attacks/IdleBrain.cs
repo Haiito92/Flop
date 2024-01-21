@@ -14,7 +14,7 @@ public class IdleBrain : CharacterBrain
     {
         while (true)
         {
-            if (_target != null) _basicAttack.Attack(_target, (long)_basicAttack.Damage.GetValue());
+            if (_target != null) OnBasicAttack.Invoke(); //_basicAttack.Attack(_target, (long)_basicAttack.Damage.GetValue());
             yield return new WaitForSeconds(_attackSpeed.GetValue());
         }
     }

@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,10 @@ public abstract class BasicBrain : MonoBehaviour
 
     //Coroutines
     Coroutine _attackRoutine = null;
+
+    //Events for devs
+    public Action OnBasicAttack;
+
 
     public void SetTarget(CharacterHealth target)
     {
@@ -39,6 +44,11 @@ public abstract class BasicBrain : MonoBehaviour
     protected virtual void FindAttacks()
     {
         _basicAttack = _actions.GetComponent<BaseAttack>();
+    }
+
+    public void DoBasicAttack()
+    {
+        _basicAttack.Attack(_target, _basicAttack.Damage.GetValue());
     }
 
     [Button]
