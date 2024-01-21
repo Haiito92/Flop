@@ -19,14 +19,14 @@ public class BerserkerBrain : CharacterBrain
 
             if (_currentSpecialResource >= _maxSpecialResource)
             {
-                _specialAttack.DoSpecialAttack(_target);
+                OnSpecialAttack?.Invoke();//_specialAttack.DoSpecialAttack(_target);
                 _currentSpecialResource = 0.0f;
                 OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
                 yield return new WaitForSeconds(_attackSpeed.GetValue());
                 continue;
             }
 
-            _basicAttack.Attack(_target, (long)_basicAttack.Damage.GetValue());
+            OnBasicAttack?.Invoke(); //_basicAttack.Attack(_target, (long)_basicAttack.Damage.GetValue());
             _currentSpecialResource = Mathf.Clamp(_currentSpecialResource + _specialResourceAdded, 0.0f, _maxSpecialResource);
             OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
             yield return new WaitForSeconds(_attackSpeed.GetValue());

@@ -17,6 +17,7 @@ public class CharacterBrain : BasicBrain
     protected int _phase = 1;
 
     //Events for Dev
+    public Action OnSpecialAttack;
     public Action<float,float> OnSpecialResourceChange;
 
     #region Properties
@@ -40,6 +41,11 @@ public class CharacterBrain : BasicBrain
     protected override IEnumerator AttackRoutine()
     {
         throw new NotImplementedException();
+    }
+
+    public void DoSpecialAttack()
+    {
+        _specialAttack.DoSpecialAttack(_target);
     }
 
     public virtual void ChangePhase(int currentPhase)

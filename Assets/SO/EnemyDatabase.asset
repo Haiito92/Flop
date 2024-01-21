@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnemyDatabase
   m_EditorClassIdentifier: 
   enemyDatas:
-  - Controller: {fileID: 9100000, guid: 57fcb3bf781330546beccbe9f0b36be3, type: 2}
-  - Controller: {fileID: 9100000, guid: 0208373c7a15f464e8dd6dfcdfb0a56c, type: 2}
+  - Controller: {fileID: 22100000, guid: 14cbae60615fc274e9634c1c17c8bca0, type: 2}
+  - Controller: {fileID: 22100000, guid: 38c50586d1b48de4ba20883c4b85c300, type: 2}

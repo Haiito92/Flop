@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class AnimatorBinding : MonoBehaviour
 
     //Refs to components
     [SerializeField] CharacterHealth _characterHealth;
+    [SerializeField] CharacterBrain _characterBrain;
 
     private void Reset()
     {
@@ -19,6 +21,9 @@ public class AnimatorBinding : MonoBehaviour
     private void Start()
     {
         _characterHealth.OnStartDeath += TriggerDeathAnimation;
+
+        _characterBrain.OnBasicAttack += TriggerBasicAttackAnimation;
+        _characterBrain.OnSpecialAttack += TriggerSpecialAttackAnimation;
     }
 
     void TriggerDeathAnimation()
@@ -29,5 +34,25 @@ public class AnimatorBinding : MonoBehaviour
     void TriggerDie()
     {
         _characterHealth.Die();
+    }
+
+    void TriggerBasicAttackAnimation()
+    {
+        _anim.SetTrigger("Attack");
+    }
+
+    void TriggerAttack()
+    {
+        _characterBrain.DoBasicAttack();
+    }
+
+    private void TriggerSpecialAttackAnimation()
+    {
+        _anim.SetTrigger("SpecialAttack");
+    }
+
+    void TriggerSpecialAttack()
+    {
+        _characterBrain.DoSpecialAttack();
     }
 }
