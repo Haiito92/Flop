@@ -22,14 +22,14 @@ public class BerserkerBrain : CharacterBrain
                 _specialAttack.DoSpecialAttack(_target);
                 _currentSpecialResource = 0.0f;
                 OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
-                yield return new WaitForSeconds(_attackSpeed);
+                yield return new WaitForSeconds(_attackSpeed.GetValue());
                 continue;
             }
 
-            _basicAttack.Attack(_target, _basicAttack.Damage);
+            _basicAttack.Attack(_target, (long)_basicAttack.Damage.GetValue());
             _currentSpecialResource = Mathf.Clamp(_currentSpecialResource + _specialResourceAdded, 0.0f, _maxSpecialResource);
             OnSpecialResourceChange?.Invoke(_currentSpecialResource, _maxSpecialResource);
-            yield return new WaitForSeconds(_attackSpeed);
+            yield return new WaitForSeconds(_attackSpeed.GetValue());
         }
     }
 
@@ -37,6 +37,6 @@ public class BerserkerBrain : CharacterBrain
     {
         base.ChangePhase(currentPhase);
 
-        _attackSpeed = 1.0f/(float)currentPhase;
+        _attackSpeed.SetValue(1.0f/(float)currentPhase);
     }
 }

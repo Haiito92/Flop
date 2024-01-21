@@ -6,6 +6,6 @@ public class ClickAttack : BaseAttack
 {
     public void OnClickAttack(CharacterHealth target)
     {
-        Attack(target, _damage);
+        Attack(target, (long)_damage.GetValue());
     }
 }

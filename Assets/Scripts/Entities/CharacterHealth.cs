@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterHealth : MonoBehaviour
 {
-    [SerializeField] long _maxHealth = 1;
+    [SerializeField] Stat _maxHealth;
     long _currentHealth;
 
     [SerializeField] IdleBrain _characterAttack;
@@ -27,7 +27,7 @@ public class CharacterHealth : MonoBehaviour
         set
         {
             _currentHealth = value;
-            OnHealthChange?.Invoke(_currentHealth, _maxHealth);
+            OnHealthChange?.Invoke(_currentHealth, (long)_maxHealth.GetValue());
         }
     }
     public bool IsAlive { get { return CurrentHealth > 0; } set { } }
@@ -39,24 +39,24 @@ public class CharacterHealth : MonoBehaviour
 
     private void Start()
     {
-        OnHealthChange.Invoke(_currentHealth, _maxHealth);
+        OnHealthChange?.Invoke(_currentHealth, (long)_maxHealth.GetValue());
     }
 
     void Init()
     {
-        CurrentHealth = _maxHealth;
+        CurrentHealth = (long)_maxHealth.GetValue();
     }
 
     public void Heal(long heal)
     {
         if (heal < 0) throw new ArgumentException("Heal value must be superior or equal to 0");
-        CurrentHealth = (long)Mathf.Clamp(_currentHealth + heal, 0, _maxHealth);
+        CurrentHealth = (long)Mathf.Clamp(_currentHealth + heal, 0, (long)_maxHealth.GetValue());
     }
 
     public void TakeDamage(long damage)
     {
         if (damage < 0) throw new ArgumentException("Damage value must be superior or equal to 0");
-        CurrentHealth = (long)Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
+        CurrentHealth = (long)Mathf.Clamp(_currentHealth - damage, 0, (long)_maxHealth.GetValue());
 
         if (CurrentHealth <= 0)
         {
@@ -73,7 +73,7 @@ public class CharacterHealth : MonoBehaviour
 
     public virtual void ResetCharacter()
     {
-        CurrentHealth = _maxHealth;
+        CurrentHealth = (long)_maxHealth.GetValue();
         _characterAttack.StartAttackRoutine();
     }
 }

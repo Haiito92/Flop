@@ -14,8 +14,8 @@ public class IdleBrain : BasicBrain
     {
         while (true)
         {
-            if (_target != null) _basicAttack.Attack(_target, _basicAttack.Damage);
-            yield return new WaitForSeconds(_attackSpeed);
+            if (_target != null) _basicAttack.Attack(_target, (long)_basicAttack.Damage.GetValue());
+            yield return new WaitForSeconds(_attackSpeed.GetValue());
         }
     }
 }

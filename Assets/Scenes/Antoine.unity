@@ -1444,7 +1444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _basicAttack: {fileID: 153048704}
-  _attackSpeed: 1
+  _attackSpeed:
+    _baseValue: 1
   _actions: {fileID: 153048700}
   _specialAttack: {fileID: 153048705}
   _maxSpecialResource: 10

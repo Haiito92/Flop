@@ -6,6 +6,6 @@ public class SpecialAttack : BaseAttack
 {
     public void DoSpecialAttack(CharacterHealth target)
     {
-        Attack(target, _damage);
+        Attack(target, (long)_damage.GetValue());
     }
 }

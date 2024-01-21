@@ -9,7 +9,7 @@ public abstract class BasicBrain : MonoBehaviour
     protected CharacterHealth _target;
 
     [SerializeField] protected BaseAttack _basicAttack;
-    [SerializeField] protected float _attackSpeed;
+    [SerializeField] protected Stat _attackSpeed;
 
     //Refs to components in same prefab
     [SerializeField] protected GameObject _actions;
