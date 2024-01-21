@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d953216a14a0523429d2509636e92da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyBrain: {fileID: 7035610976194028120}
+  _enemyBrain: {fileID: 2773252463756713260}
   _animator: {fileID: 851168714550214478}
 --- !u!114 &6358400556459157021
 MonoBehaviour:
@@ -184,8 +184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aeaf5fa09058834193dd9d3e123fe56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _characterAttack: {fileID: 7035610976194028120}
+  _maxHealth:
+    _baseValue: 100
+    _additiveModifiers: 
+    _multiplicativeModifiers: []
+  _characterBrain: {fileID: 2773252463756713260}
 --- !u!114 &-3457523877641646809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +247,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3453fe4a21ca0409f18dac565efb13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage:
+    _baseValue: 10
+    _additiveModifiers: 
+    _multiplicativeModifiers: []
 --- !u!1 &6014345713232783741
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599662787945324356}
   - component: {fileID: 7035610976194028120}
+  - component: {fileID: 2773252463756713260}
   m_Layer: 0
   m_Name: Brain
   m_TagString: Untagged
@@ -290,6 +297,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _basicAttack: {fileID: 6414421974808427843}
-  _attackSpeed:
-    _baseValue: 1
+  _attackSpeed: 1
   _actions: {fileID: 2778839553803202333}
+  _specialAttack: {fileID: 0}
+  _maxSpecialResource: 0
+  SpecialResourceColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &2773252463756713260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014345713232783741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755fa3022a44d584c970404d68590a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentBrain: {fileID: 7035610976194028120}

@@ -290,7 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fe94c41ff120d4696a4169d4391239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage:
+    _baseValue: 10
+    _additiveModifiers: 
+    _multiplicativeModifiers: []
 --- !u!114 &153048704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3453fe4a21ca0409f18dac565efb13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage:
+    _baseValue: 10
+    _additiveModifiers: 
+    _multiplicativeModifiers: []
 --- !u!114 &153048705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2030ccb894c84e743999f4150a2ace52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
+  _damage:
+    _baseValue: 20
+    _additiveModifiers: 
+    _multiplicativeModifiers: []
 --- !u!1 &207681155
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,8 +839,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252cdd6f4bd5d7a458192c65b0a99bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1000
-  _characterAttack: {fileID: 0}
+  _maxHealth:
+    _baseValue: 1000
+    _additiveModifiers: 
+    _multiplicativeModifiers: []
+  _characterBrain: {fileID: 920097124}
 --- !u!1 &700649803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,8 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _basicAttack: {fileID: 153048704}
-  _attackSpeed:
-    _baseValue: 1
+  _attackSpeed: 1
   _actions: {fileID: 153048700}
   _specialAttack: {fileID: 153048705}
   _maxSpecialResource: 10
@@ -2192,7 +2203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3453fe4a21ca0409f18dac565efb13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage:
+    _baseValue: 1
+    _additiveModifiers: 
+    _multiplicativeModifiers: []
 --- !u!1 &1727605190
 GameObject:
   m_ObjectHideFlags: 0

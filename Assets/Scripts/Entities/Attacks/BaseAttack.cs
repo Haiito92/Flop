@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BaseAttack : MonoBehaviour
 {
-    [SerializeField] protected Stat _damage;
+    [SerializeField] protected LongStat _damage;
 
     //Properties
     #region Properties
-    public Stat Damage { get => _damage; set => _damage = value; }
+    public LongStat Damage { get => _damage; set => _damage = value; }
     #endregion
 
     public void Attack(CharacterHealth target, long damage)

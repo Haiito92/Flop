@@ -35,8 +35,17 @@ public class BerserkerBrain : CharacterBrain
 
     public override void ChangePhase(int currentPhase)
     {
+        if (currentPhase == 1 && Phase == 2)
+        {
+            _attackSpeed.RemoveMutiplicativeModifier(1f / Phase);
+        }
+
         base.ChangePhase(currentPhase);
 
-        _attackSpeed.SetValue(1.0f/(float)currentPhase);
+        
+        if(Phase == 2)
+        {
+            _attackSpeed.AddMutiplicativeModifier(1f / Phase);
+        }
     }
 }

@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class CharacterHealth : MonoBehaviour
 {
-    [SerializeField] Stat _maxHealth;
+    [SerializeField] LongStat _maxHealth;
     long _currentHealth;
 
-    [SerializeField] IdleBrain _characterAttack;
+    [SerializeField] BrainBinding _characterBrain;
 
     private void Reset()
     {
-        _characterAttack = GetComponent<IdleBrain>();
+        _characterBrain = GetComponent<BrainBinding>();
     }
 
     //Events
@@ -60,7 +60,7 @@ public class CharacterHealth : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            _characterAttack.StopAttackRoutine();
+            _characterBrain.CurrentBrain.StopAttackRoutine();
             OnStartDeath?.Invoke();
         }
     }
@@ -74,6 +74,6 @@ public class CharacterHealth : MonoBehaviour
     public virtual void ResetCharacter()
     {
         CurrentHealth = (long)_maxHealth.GetValue();
-        _characterAttack.StartAttackRoutine();
+        _characterBrain.CurrentBrain.StartAttackRoutine();
     }
 }

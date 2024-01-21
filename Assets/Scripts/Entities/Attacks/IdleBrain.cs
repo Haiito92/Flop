@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class IdleBrain : BasicBrain
+public class IdleBrain : CharacterBrain
 {
     private void Start()
     {
