@@ -10,7 +10,10 @@ public class EquipementController : MonoBehaviour
 
     // Fields //
     [SerializeField] private string _description;
+    [SerializeField] private int _atk;
+    [SerializeField] private int _def;
     [SerializeField] private EquipementType _equipementType;
+    [SerializeField] private int _itemID;
 
     //References
     private Image _image;
@@ -25,15 +28,16 @@ public class EquipementController : MonoBehaviour
 
     private void Start()
     {
-        EquipementData = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[0];
-        Init();
+
     }
 
-    public void Init()
+    public void Init(int _itemID)
     {
-        if(EquipementData == null) { return; }
-
+        EquipementData = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[_itemID];
+        if (EquipementData == null) { return; }
         name = EquipementData.Name;
+        _atk = EquipementData.Atk;
+        _def = EquipementData.Def;
         _description = EquipementData.Description;
         Image.sprite = EquipementData.Sprite;
         _equipementType = EquipementData.EquipementType;

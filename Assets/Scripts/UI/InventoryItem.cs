@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    [Header("UI")]
+    [Header("Visual")]
     public Image image;
+
+    [Header("UI")]
+    [SerializeField] StuffToolTip _toolTip;
 
     [HideInInspector] private Transform parentAfterDrag;
 
@@ -30,10 +33,23 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
+
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(ParentAfterDrag);
         image.raycastTarget = true;
+
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _toolTip.ShowToolTip();
+        _toolTip.SetStats(equipment);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _toolTip.HideToolTip();
     }
 }
