@@ -25,8 +25,6 @@ public class EnemyInitializer : MonoBehaviour
         _enemyBrain.SetTarget(target);
 
         _enemyHealth.MaxHealth += Scale(_healthScalingCurve, currentBossfight, currentSegment);
-
-        //Debug.Log(_enemyHealth.MaxHealth);
     }
 
     private long Scale(AnimationCurve animationCurve, int currentBossfight, int currentSegment)
