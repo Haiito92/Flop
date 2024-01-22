@@ -7,6 +7,10 @@ public class EnemyDrop : MonoBehaviour
     [SerializeField] long _goldDropped;
     [SerializeField] CharacterHealth _enemyHealth;
 
+    #region Properties
+    public long GoldDropped {  get { return _goldDropped; } set {  _goldDropped = value; } }
+    #endregion 
+
     private void Reset()
     {
         _enemyHealth = GetComponent<CharacterHealth>();

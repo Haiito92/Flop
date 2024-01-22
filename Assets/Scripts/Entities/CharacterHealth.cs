@@ -21,14 +21,14 @@ public class CharacterHealth : MonoBehaviour
     public event Action OnEndDeath;
 
     //Properties
-    public long MaxHealth { get => _maxHealth; set => _maxHealth = value; }
+    public LongStat MaxHealth { get => _maxHealth; set => _maxHealth = value; }
     public long CurrentHealth
     {
         get => _currentHealth;
         set
         {
             _currentHealth = value;
-            OnHealthChange?.Invoke(_currentHealth, (long)_maxHealth.GetValue());
+            OnHealthChange?.Invoke(_currentHealth, _maxHealth.GetValue());
         }
     }
     public bool IsAlive { get { return CurrentHealth > 0; } set { } }
@@ -41,24 +41,24 @@ public class CharacterHealth : MonoBehaviour
 
     private void Start()
     {
-        OnHealthChange?.Invoke(_currentHealth, (long)_maxHealth.GetValue());
+        OnHealthChange?.Invoke(_currentHealth, _maxHealth.GetValue());
     }
 
     void Init()
     {
-        CurrentHealth = (long)_maxHealth.GetValue();
+        CurrentHealth = _maxHealth.GetValue();
     }
 
     public void Heal(long heal)
     {
         if (heal < 0) throw new ArgumentException("Heal value must be superior or equal to 0");
-        CurrentHealth = (long)Mathf.Clamp(_currentHealth + heal, 0, (long)_maxHealth.GetValue());
+        CurrentHealth = (long)Mathf.Clamp(_currentHealth + heal, 0, _maxHealth.GetValue());
     }
 
     public void TakeDamage(long damage)
     {
         if (damage < 0) throw new ArgumentException("Damage value must be superior or equal to 0");
-        CurrentHealth = (long)Mathf.Clamp(_currentHealth - damage, 0, (long)_maxHealth.GetValue());
+        CurrentHealth = (long)Mathf.Clamp(_currentHealth - damage, 0, _maxHealth.GetValue());
 
         if (CurrentHealth <= 0)
         {
@@ -75,7 +75,7 @@ public class CharacterHealth : MonoBehaviour
 
     public virtual void ResetCharacter()
     {
-        CurrentHealth = (long)_maxHealth.GetValue();
+        CurrentHealth = _maxHealth.GetValue();
         _characterBrain.CurrentBrain.StartAttackRoutine();
     }
 }

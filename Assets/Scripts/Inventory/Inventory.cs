@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] public ResourcesInventory ResourcesInventory;
+    [SerializeField] public GameObject InventoryContainer;
 
     #region Singleton
     private static Inventory _instance;

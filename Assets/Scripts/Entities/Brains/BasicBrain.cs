@@ -21,6 +21,9 @@ public abstract class BasicBrain : MonoBehaviour
     //Events for devs
     public Action OnBasicAttack;
 
+    #region Properties
+    public BaseAttack BaseAttack { get { return _basicAttack; }  set { _basicAttack = value; }  }
+    #endregion
 
     public void SetTarget(CharacterHealth target)
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyInitializer : MonoBehaviour
 {
     [SerializeField] BrainBinding _enemyBrain;
-    [SerializeField] EnemyHealth _enemyHealth;
+    [SerializeField] CharacterHealth _enemyHealth;
     [SerializeField] EnemyDrop _enemyDrop;
     [SerializeField] Animator _animator;
     [SerializeField] AnimationCurve _healthScalingCurve;
@@ -22,7 +22,9 @@ public class EnemyInitializer : MonoBehaviour
     {
         _animator.runtimeAnimatorController = enemyData.Controller;
         _enemyBrain.CurrentBrain.SetTarget(target);
-        _enemyHealth.MaxHealth += Scale(_healthScalingCurve, currentBossfight, currentSegment);
+        _enemyHealth.MaxHealth.AugmentBaseValue(Scale(_healthScalingCurve, currentBossfight, currentSegment));
+        _enemyBrain.CurrentBrain.BaseAttack.Damage.AugmentBaseValue(Scale(_damageScalingCurve, currentBossfight, currentSegment));
+        _enemyDrop.GoldDropped = Scale(_dropScalingCurve, currentBossfight, currentSegment);
     }
 
     private long Scale(AnimationCurve animationCurve, int currentBossfight, int currentSegment)
