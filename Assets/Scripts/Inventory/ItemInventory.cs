@@ -1,17 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemInventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int _size = 52;
+    EquipementData[] _equipments;
+
+    #region Properties
+    public EquipementData[] Equipments => _equipments;
+    #endregion
+
+    private void Awake()
+    {
+        _equipments = new EquipementData[_size];
+    }
+
+    public void Add(EquipementData equipement)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Remove()
     {
         
     }

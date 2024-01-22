@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] public ResourcesInventory ResourcesInventory;
-    [SerializeField] public GameObject InventoryContainer;
+    [SerializeField] ResourcesInventory _resourcesInventory;
+    [SerializeField] ItemInventory _itemInventory;
+
+    public ResourcesInventory ResourcesInventory => _resourcesInventory;
+    public ItemInventory ItemInventory => _itemInventory;
 
     #region Singleton
     private static Inventory _instance;
@@ -23,6 +26,12 @@ public class Inventory : MonoBehaviour
         }
     }
     #endregion
+
+    private void Reset()
+    {
+        _resourcesInventory = GetComponent<ResourcesInventory>();
+        _itemInventory = GetComponent<ItemInventory>();
+    }
 
     private void Awake()
     {
