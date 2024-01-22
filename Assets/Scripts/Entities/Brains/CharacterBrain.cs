@@ -9,7 +9,7 @@ using UnityEngine;
 public class CharacterBrain : BasicBrain
 {
     //Fields
-    [SerializeField] protected SpecialAttack _specialAttack;
+    [SerializeField] private SpecialAttack _specialAttack;
 
     [SerializeField] protected float _maxSpecialResource;
     protected float _currentSpecialResource = 0.0f;
@@ -21,6 +21,7 @@ public class CharacterBrain : BasicBrain
     public Action<float,float> OnSpecialResourceChange;
 
     #region Properties
+    public SpecialAttack SpecialAttack { get => _specialAttack; }
     public float MaxSpecialResource => _maxSpecialResource;
     public float CurrentSpecialResource => _currentSpecialResource;
     public int Phase { get => _phase; set => _phase = value; }

@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class LongStat : Stat
+public class LongStat : Stat<long>
 {
-    [SerializeField] long _baseValue = 1;
-
-    [SerializeField] List<long> _additiveModifiers = new List<long>();
-
-    long _additiveValue;
-
-    public long GetValue()
+    public override long GetValue()
     {
         long finalValue = _baseValue;
 
@@ -22,17 +16,12 @@ public class LongStat : Stat
         return finalValue;
     }
 
-    public void SetValue(long value)
-    {
-        _baseValue = value;
-    }
-
-    public void AugmentBaseValue(long value)
+    public override void AugmentBaseValue(long value)
     {
         _baseValue += value;
     }
 
-    void SetAdditiveValue()
+    protected override void SetAdditiveValue()
     {
         _additiveValue = 0;
 
@@ -40,17 +29,5 @@ public class LongStat : Stat
         {
             _additiveValue += modifier;
         }
-    }
-
-    public void AddAdditiveModifier(long modifier)
-    {
-        _additiveModifiers.Add(modifier);
-        SetAdditiveValue();
-    }
-
-    public void RemoveAdditiveModifier(long modifier)
-    {
-        _additiveModifiers.Remove(modifier);
-        SetAdditiveValue();
     }
 }
