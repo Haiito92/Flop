@@ -21,6 +21,7 @@ public class CharacterHealth : MonoBehaviour
     public event Action OnEndDeath;
 
     //Properties
+    public long MaxHealth { get => _maxHealth; set => _maxHealth = value; }
     public long CurrentHealth
     {
         get => _currentHealth;
@@ -31,6 +32,7 @@ public class CharacterHealth : MonoBehaviour
         }
     }
     public bool IsAlive { get { return CurrentHealth > 0; } set { } }
+
 
     private void Awake()
     {
