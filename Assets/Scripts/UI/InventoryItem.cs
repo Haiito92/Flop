@@ -17,6 +17,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private EquipementController equipment;
 
     public Transform ParentAfterDrag { get => parentAfterDrag; set => parentAfterDrag = value; }
+    public EquipementController Equipment { get => equipment; set => equipment = value; }
 
     private void Awake()
     {
