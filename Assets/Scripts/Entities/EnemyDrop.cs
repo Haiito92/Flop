@@ -24,6 +24,7 @@ public class EnemyDrop : MonoBehaviour
     void Drop()
     {
         Inventory.Instance.ResourcesInventory.AddGold(_goldDropped);
+        EquipmentGenerator.Instance.GenerateItem();
     }
 
     private void OnDestroy()
