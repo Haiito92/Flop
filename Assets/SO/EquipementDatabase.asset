@@ -13,21 +13,33 @@ MonoBehaviour:
   m_Name: EquipementDatabase
   m_EditorClassIdentifier: 
   _equipementDatas:
-  - _name: Helmet
-    _description: Chapeau !
-    _sprite: {fileID: -1709219863, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
+  - _name: "Casque Des l\xE9gendes"
+    _description: Ce casque est cool
+    _sprite: {fileID: 21300000, guid: f3e2b2cba36ccf7498bdb775b4498f1b, type: 3}
     _equipementType: 1
-    _atk: 10
-    _def: 20
-  - _name: WOOOOW un plastron
-    _description: Plastron
-    _sprite: {fileID: 574449848, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
-    _equipementType: 2
-    _atk: 15
-    _def: 25
-  - _name: Legs
-    _description: Bot...
-    _sprite: {fileID: 2001888223, guid: 193ed0b7f7a5f2447b74f945f2b9aa70, type: 3}
-    _equipementType: 3
     _atk: 5
     _def: 5
+  - _name: Casque Orange
+    _description: Ce Casque est Orange
+    _sprite: {fileID: 21300000, guid: 8182796b71d9dbb4eb679dff42288bb6, type: 3}
+    _equipementType: 1
+    _atk: 6
+    _def: 6
+  - _name: Casque Blanc
+    _description: 
+    _sprite: {fileID: 21300000, guid: dfe6c24d8710cb34b9568a956f37f1c5, type: 3}
+    _equipementType: 1
+    _atk: 6
+    _def: 7
+  - _name: Casque de feu
+    _description: 
+    _sprite: {fileID: 21300000, guid: 1c34c0a5b7c9a904a87cbb95df83e4e0, type: 3}
+    _equipementType: 1
+    _atk: 7
+    _def: 10
+  - _name: "Casque Ros\xE9"
+    _description: 
+    _sprite: {fileID: 21300000, guid: a8cd6fdd9ea106e469432cb8659a819a, type: 3}
+    _equipementType: 1
+    _atk: 8
+    _def: 12
