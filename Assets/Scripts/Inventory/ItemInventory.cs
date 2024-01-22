@@ -1,18 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemInventory : MonoBehaviour
 {
-    List<EquipementData> _equipments = new List<EquipementData>();
+    [SerializeField] int _size = 52;
+    EquipementData[] _equipments;
 
-    public void Add(EquipementData equipment)
+    #region Properties
+    public EquipementData[] Equipments => _equipments;
+    #endregion
+
+    private void Awake()
     {
-        _equipments.Add(equipment);
+        _equipments = new EquipementData[_size];
     }
 
-    public void Remove(EquipementData equipment)
+    public void Add(EquipementData equipement)
     {
-        _equipments.Remove(equipment);
+        
+    }
+
+    public void Remove()
+    {
+        
     }
 }

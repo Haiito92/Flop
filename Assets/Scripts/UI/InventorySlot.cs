@@ -12,13 +12,19 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         GameObject dropped = eventData.pointerDrag;
         InventoryItem draggableItem = dropped.GetComponent<InventoryItem>();
         EquipementController draggableController = dropped.GetComponent<EquipementController>();
+
         if(draggableController.EquipementData.EquipementType == _slotType)
         {
-            draggableItem.ParentAfterDrag = transform;
+            ChangeItem(draggableItem);
         }
         if(_slotType == EquipementType.NONE)
         {
-            draggableItem.ParentAfterDrag = transform;
+            ChangeItem(draggableItem);
         }
+    }
+
+    void ChangeItem(InventoryItem item)
+    {
+        item.ParentAfterDrag = transform;
     }
 }

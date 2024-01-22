@@ -17,6 +17,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private EquipementController equipment;
 
     public Transform ParentAfterDrag { get => parentAfterDrag; set => parentAfterDrag = value; }
+    public StuffToolTip ToolTip { get => _toolTip; set => _toolTip = value; }
 
     private void Awake()
     {
@@ -39,7 +40,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         transform.SetParent(ParentAfterDrag);
         image.raycastTarget = true;
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)

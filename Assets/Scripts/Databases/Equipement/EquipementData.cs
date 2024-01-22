@@ -21,6 +21,7 @@ public class EquipementData
     [SerializeField] private int _atk;
     [SerializeField] private int _def;
 
+    private int _id = 0;
 
     #region Properties
     public string Name { get => _name; }
@@ -29,5 +30,17 @@ public class EquipementData
     public EquipementType EquipementType { get => _equipementType; }
     public int Atk { get => _atk; set => _atk = value; }
     public int Def { get => _def; set => _def = value; }
+    public int Id { get => _id; set => _id = value; }
+
     #endregion
+
+    public EquipementData() 
+    {
+        _name = "";
+        _description = "";
+        _sprite = null;
+        _equipementType = EquipementType.NONE;
+        _atk = 0;
+        _def = 0;
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EquipmentGenerator : MonoBehaviour
 {
+    int _currentId = 1;
 
     #region Singleton
     static EquipmentGenerator _instance;
@@ -30,6 +31,8 @@ public class EquipmentGenerator : MonoBehaviour
     {
         int randomIndex = Random.Range(0, DatabasesManager.Instance.EquipementDatabase.EquipementDatas.Count);
         EquipementData equipmentDropped = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[randomIndex];
+        equipmentDropped.Id = _currentId;
+        _currentId++;
         Inventory.Instance.ItemInventory.Add(equipmentDropped);
     }
 }

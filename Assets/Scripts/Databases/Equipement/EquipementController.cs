@@ -26,14 +26,14 @@ public class EquipementController : MonoBehaviour
         _image = GetComponent<Image>();
     }
 
-    private void Start()
-    {
-
-    }
-
     public void Init(int _itemID)
     {
-        EquipementData = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[_itemID];
+        Init(DatabasesManager.Instance.EquipementDatabase.EquipementDatas[_itemID]);
+    }
+
+    public void Init(EquipementData data)
+    {
+        EquipementData = data;
         if (EquipementData == null) { return; }
         name = EquipementData.Name;
         _atk = EquipementData.Atk;
