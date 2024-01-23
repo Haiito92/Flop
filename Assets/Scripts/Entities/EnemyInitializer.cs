@@ -22,9 +22,12 @@ public class EnemyInitializer : MonoBehaviour
     {
         _animator.runtimeAnimatorController = enemyData.Controller;
         _enemyBrain.CurrentBrain.SetTarget(target);
-        _enemyHealth.MaxHealth.AugmentBaseValue(Scale(_healthScalingCurve, currentBossfight, currentSegment));
-        _enemyBrain.CurrentBrain.BaseAttack.Damage.AugmentBaseValue(Scale(_damageScalingCurve, currentBossfight, currentSegment));
-        _enemyDrop.GoldDropped = Scale(_dropScalingCurve, currentBossfight, currentSegment);
+        //_enemyHealth.MaxHealth.AugmentBaseValue(Scale(_healthScalingCurve, currentBossfight, currentSegment));
+        //_enemyBrain.CurrentBrain.BaseAttack.Damage.AugmentBaseValue(Scale(_damageScalingCurve, currentBossfight, currentSegment));
+        //_enemyDrop.GoldDropped = Scale(_dropScalingCurve, currentBossfight, currentSegment);
+        _enemyHealth.MaxHealth.AugmentBaseValue((long)_healthScalingCurve.Evaluate(currentBossfight - 1 + currentSegment));
+        _enemyBrain.CurrentBrain.BaseAttack.Damage.AugmentBaseValue((long)_damageScalingCurve.Evaluate(currentBossfight - 1 + currentSegment));
+        _enemyDrop.GoldDropped = (long)_dropScalingCurve.Evaluate(currentBossfight - 1 + currentSegment);
     }
 
     private long Scale(AnimationCurve animationCurve, int currentBossfight, int currentSegment)

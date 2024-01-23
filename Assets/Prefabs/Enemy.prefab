@@ -179,22 +179,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      value: 5
+      inSlope: 0.15151516
+      outSlope: 0.15151516
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 20
+      inSlope: 0.15151516
+      outSlope: 0.15151516
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -203,22 +203,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 0.09090909
+      outSlope: 0.09090909
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 10
+      inSlope: 0.09090909
+      outSlope: 0.09090909
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -227,22 +227,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      value: 10
+      inSlope: 10
+      outSlope: 10
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 1000
+      inSlope: 10
+      outSlope: 10
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -260,9 +260,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth:
-    _multiplicativeModifiers: []
     _baseValue: 100
+    _level: 0
     _additiveModifiers: 
+    _multiplicativeModifiers: []
   _characterBrain: {fileID: 2773252463756713260}
 --- !u!114 &-3457523877641646809
 MonoBehaviour:
@@ -323,9 +324,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage:
-    _multiplicativeModifiers: []
     _baseValue: 10
+    _level: 0
     _additiveModifiers: 
+    _multiplicativeModifiers: []
 --- !u!1 &6014345713232783741
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,9 +375,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _basicAttack: {fileID: 6414421974808427843}
   _attackSpeed:
-    _multiplicativeModifiers: []
     _baseValue: 1
+    _level: 0
     _additiveModifiers: []
+    _multiplicativeModifiers: []
   _actions: {fileID: 2778839553803202333}
   _specialAttack: {fileID: 0}
   _maxSpecialResource: 0

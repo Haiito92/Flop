@@ -46,10 +46,16 @@ public class BrainBinding : MonoBehaviour
         }
     }
 
-    void ChangeBrain(CharacterBrain newBrain)
+    public void ChangeBrain(CharacterBrain newBrain)
     {
         _currentBrain.StopAttackRoutine();
+        CharacterBrain oldBrain = _currentBrain;
+
         _currentBrain = newBrain;
+
+        _currentBrain.BaseAttack.Damage = oldBrain.BaseAttack.Damage;
+        _currentBrain.SpecialAttack.Damage = oldBrain.SpecialAttack.Damage;
+
         _currentBrain.StartAttackRoutine();
         OnBrainChange?.Invoke(_currentBrain);
     }
