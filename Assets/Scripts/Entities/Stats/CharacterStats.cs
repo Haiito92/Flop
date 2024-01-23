@@ -40,6 +40,7 @@ public class CharacterStats : MonoBehaviour
         if (!CanAfford((int)_costCurve.Evaluate(MaxHealth.Level))) return;
 
         UpgradeLongStat(MaxHealth, _healthUpgradeCurve, out int nextUpgradeValue, out int nextCost);
+        _characterHealth.CurrentHealth += (long)_healthUpgradeCurve.Evaluate(MaxHealth.Level - 1);
 
         OnHealthUpgradeChange?.Invoke(nextUpgradeValue, nextCost);
     }

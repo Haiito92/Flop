@@ -3669,7 +3669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goldsText: {fileID: 407441320}
-  _resources: {fileID: 0}
+  _resources: {fileID: 1472983584}
 --- !u!114 &737055140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}

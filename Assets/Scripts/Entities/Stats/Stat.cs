@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Stat<T>
 {
     [SerializeField] protected T _baseValue;
-    [SerializeField] int _level;
+    [SerializeField] int _level = 1;
 
     [SerializeField] protected List<T> _additiveModifiers = new List<T>();
     [SerializeField] protected List<float> _multiplicativeModifiers = new List<float>();
