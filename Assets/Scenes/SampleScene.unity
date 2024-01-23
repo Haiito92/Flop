@@ -4778,6 +4778,10 @@ PrefabInstance:
       value: EquipmentSlot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
+      propertyPath: _toolTip
+      value: 
+      objectReference: {fileID: 1419254734}
+    - target: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
       propertyPath: _slotType
       value: 3
       objectReference: {fileID: 0}
@@ -9630,6 +9634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EquipmentSlot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
+      propertyPath: _toolTip
+      value: 
+      objectReference: {fileID: 1419254734}
     - target: {fileID: 4504100806857644931, guid: f6ac000c8b524fc49847ee3476de213e, type: 3}
       propertyPath: _slotType
       value: 2

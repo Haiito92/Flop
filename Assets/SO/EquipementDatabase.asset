@@ -43,3 +43,207 @@ MonoBehaviour:
     _equipementType: 1
     _atk: 8
     _health: 10
+  - _name: Casque Azur
+    _description: 
+    _sprite: {fileID: 21300000, guid: a928118957b17f24f8bda0a9b128abf3, type: 3}
+    _equipementType: 1
+    _atk: 12
+    _health: 10
+  - _name: Casque Metallique
+    _description: 
+    _sprite: {fileID: 21300000, guid: 65c9f293c8cb5ec4bacd1e05f2eed0f8, type: 3}
+    _equipementType: 1
+    _atk: 13
+    _health: 11
+  - _name: Casque Marin
+    _description: 
+    _sprite: {fileID: 21300000, guid: cd7f991bbed001746b44404788c30253, type: 3}
+    _equipementType: 1
+    _atk: 14
+    _health: 14
+  - _name: Casque Marin++
+    _description: 
+    _sprite: {fileID: 21300000, guid: 4996bbe8ca18290429f0d2c1ebd2e26f, type: 3}
+    _equipementType: 1
+    _atk: 15
+    _health: 15
+  - _name: Casque Obsidienne
+    _description: 
+    _sprite: {fileID: 21300000, guid: a5351c58d5fedd0458da3f3d52a736d4, type: 3}
+    _equipementType: 1
+    _atk: 13
+    _health: 20
+  - _name: Casque Magma
+    _description: 
+    _sprite: {fileID: 21300000, guid: 25516627d819ff34c8c8da4d9f232861, type: 3}
+    _equipementType: 1
+    _atk: 17
+    _health: 15
+  - _name: Casque Electro
+    _description: 
+    _sprite: {fileID: 21300000, guid: 958680648f1452f44848f2cb7120d60a, type: 3}
+    _equipementType: 1
+    _atk: 20
+    _health: 10
+  - _name: Casque D'or
+    _description: 
+    _sprite: {fileID: 21300000, guid: e3e550344821179499dbc515c4caf591, type: 3}
+    _equipementType: 1
+    _atk: 22
+    _health: 16
+  - _name: Plastron Basique
+    _description: 
+    _sprite: {fileID: -44187865, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 2
+    _health: 7
+  - _name: Plastron Forestier
+    _description: 
+    _sprite: {fileID: -206935812, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 5
+    _health: 7
+  - _name: Plastron Bleu
+    _description: 
+    _sprite: {fileID: 86550233, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 8
+    _health: 10
+  - _name: Plastron De Zync
+    _description: 
+    _sprite: {fileID: 1663381922, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 6
+    _health: 14
+  - _name: Plastron D'Acier
+    _description: 
+    _sprite: {fileID: 1908781694, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 6
+    _health: 16
+  - _name: Plastron Cuivre
+    _description: 
+    _sprite: {fileID: -1975435200, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 6
+    _health: 18
+  - _name: Plastron Diamant
+    _description: 
+    _sprite: {fileID: 2144318743, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 7
+    _health: 19
+  - _name: Plastron D'Or
+    _description: 
+    _sprite: {fileID: -462908299, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 8
+    _health: 22
+  - _name: Plastron D'Or+
+    _description: 
+    _sprite: {fileID: -2007837136, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 8
+    _health: 24
+  - _name: Plastron D'Or++
+    _description: 
+    _sprite: {fileID: 1795244125, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 8
+    _health: 26
+  - _name: Plastron Jade
+    _description: 
+    _sprite: {fileID: -875500133, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 10
+    _health: 26
+  - _name: Plastron Jade++
+    _description: 
+    _sprite: {fileID: -498480258, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 12
+    _health: 28
+  - _name: Plastron Ultime
+    _description: 
+    _sprite: {fileID: 1925455121, guid: 8689735cc92e47f4c827f33ac14a29a3, type: 3}
+    _equipementType: 2
+    _atk: 15
+    _health: 30
+  - _name: Livre Magique
+    _description: 
+    _sprite: {fileID: -1738983514, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 10
+    _health: 0
+  - _name: Livre Rouge
+    _description: 
+    _sprite: {fileID: 1632960494, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 5
+    _health: 15
+  - _name: Livre Obsidienne
+    _description: 
+    _sprite: {fileID: -1200272810, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 0
+    _health: 20
+  - _name: Livre Rose
+    _description: 
+    _sprite: {fileID: -1352140129, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 3
+    _health: 25
+  - _name: "Livre Ambr\xE9"
+    _description: 
+    _sprite: {fileID: -1681019908, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 15
+    _health: 20
+  - _name: Livre Marin
+    _description: 
+    _sprite: {fileID: 1167594256, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 15
+    _health: 25
+  - _name: "Livre Orang\xE9"
+    _description: 
+    _sprite: {fileID: 2066398764, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 16
+    _health: 22
+  - _name: Livre Vert
+    _description: 
+    _sprite: {fileID: 1892129648, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 10
+    _health: 35
+  - _name: Livre Neutre
+    _description: 
+    _sprite: {fileID: 485762628, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 22
+    _health: 22
+  - _name: Livre Fleurale
+    _description: 
+    _sprite: {fileID: -119115038, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 20
+    _health: 30
+  - _name: Livre Cyan
+    _description: 
+    _sprite: {fileID: -1743836769, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 22
+    _health: 28
+  - _name: Livre Ancien
+    _description: 
+    _sprite: {fileID: 118407240, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 25
+    _health: 28
+  - _name: LIVRE
+    _description: 
+    _sprite: {fileID: -1986861572, guid: 0f7ac4181ef1ef04592482e5d884001f, type: 3}
+    _equipementType: 3
+    _atk: 30
+    _health: 30
