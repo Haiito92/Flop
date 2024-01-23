@@ -34,13 +34,13 @@ public class EquipmentGenerator : MonoBehaviour
         switch (_radValue)
         {
             case 0:
-                randomIndex = Random.Range(0, 12);
+                randomIndex = GenerationProbability(0, 121);
                 break;
             case 1:
-                randomIndex = Random.Range(13, 26);
+                randomIndex = GenerationProbability(0, 121) + 12;
                 break;
             case 2:
-                randomIndex = Random.Range(26, 39);
+                randomIndex = GenerationProbability(0, 121) + 25;
                 break;
             default:
                 Debug.Log("Bug");
@@ -49,5 +49,64 @@ public class EquipmentGenerator : MonoBehaviour
         EquipementData equipmentDropped = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[randomIndex];
         equipmentDropped.Id = randomIndex;
         Inventory.Instance.ItemInventory.Add(equipmentDropped);
+    }
+
+    private int GenerationProbability(int min, int max)
+    {
+        int random = Random.Range(min, max);
+
+        if(random >= min && random < min + 5)
+        {
+            return 12;
+        }
+        else if (random >= min + 5 && random < min + 10)
+        {
+            return 11;
+        }
+        else if(random >= min + 10 && random < min + 20)
+        {
+            return 10;
+        }
+        else if(random >= min + 20 && random < min + 30)
+        {
+            return 9;
+        }
+        else if(random >= min + 30 && random < min + 40)
+        {
+            return 8;
+        }
+        else if(random >= min + 40 && random < min + 50)
+        {
+            return 7;
+        }
+        else if (random >= min + 50 && random < min + 60)
+        {
+            return 6;
+        }
+        else if (random >= min + 60 && random < min + 70)
+        {
+            return 5;
+        }
+        else if (random >= min + 70 && random < min + 80)
+        {
+            return 4;
+        }
+        else if (random >= min + 80 && random < min + 90)
+        {
+            return 3;
+        }
+        else if (random >= min + 90 && random < min + 100)
+        {
+            return 2;
+        }
+        else if (random >= min + 100 && random < min + 110)
+        {
+            return 1;
+        }
+        else if (random >= min + 110 && random <= min + 120)
+        {
+            return 0;
+        }
+        return 0;
     }
 }
