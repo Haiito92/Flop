@@ -199,10 +199,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
-        m_MethodName: UpgradeMaxHealth
-        m_Mode: 3
+      - m_Target: {fileID: 790268809952226850}
+        m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
+        m_MethodName: DoUpgrade
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -223,9 +223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b98a28ec5ba388458074d1d6ae58121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterStats: {fileID: 0}
+  _statUpgrader: {fileID: 0}
   _upgradeAmountText: {fileID: 8599008705209286094}
   _costText: {fileID: 1661579743339440540}
+  _upgradeType: 0
 --- !u!1 &1877394694230700371
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89c422e6ef20f5e49988ff93801084f1, type: 2}
   m_sharedMaterial: {fileID: 4581585211912433440, guid: 89c422e6ef20f5e49988ff93801084f1, type: 2}

@@ -19,4 +19,10 @@ public class ResourcesInventory : MonoBehaviour
         _gold = (long)Mathf.Clamp(_gold + amount, 0, long.MaxValue);
         OnGoldChanged?.Invoke(_gold);
     }
+
+    public void RemoveGold(long amount)
+    {
+        _gold = (long)Mathf.Clamp(_gold - amount, 0, long.MaxValue);
+        OnGoldChanged?.Invoke(_gold);
+    }
 }

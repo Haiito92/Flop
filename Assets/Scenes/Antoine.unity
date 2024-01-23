@@ -538,7 +538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &129323597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1743,7 +1743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &454580376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2042,60 +2042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cccd5c2a4aa73604db1f5318c166337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &513283480
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 513283481}
-  - component: {fileID: 513283482}
-  m_Layer: 0
-  m_Name: MageBrain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &513283481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513283480}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 920097119}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &513283482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513283480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9bde8ba9b5bd3d4bbeb93dc78366819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _basicAttack: {fileID: 153048704}
-  _attackSpeed:
-    _baseValue: 0
-    _level: 1
-    _additiveModifiers: []
-    _multiplicativeModifiers: []
-  _actions: {fileID: 153048700}
-  _specialAttack: {fileID: 153048705}
-  _maxSpecialResource: 100
-  SpecialResourceColor: {r: 0.22764327, g: 0.28294796, b: 0.8207547, a: 0}
 --- !u!1 &523525835
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,103 +3806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterHealth: {fileID: 620318750}
-  _characterBrain: {fileID: 0}
-  _healthUpgradeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 100
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 100
-      value: 10000
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _dmgUpgradeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 10
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 100
-      value: 1000
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _specialDMGUpgradeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 20
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 100
-      value: 2000
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _costCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 100
-      value: 100
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  _characterBrain: {fileID: 1178232325}
 --- !u!1 &804796556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4314,7 +4164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 863344702}
   _characterHealth: {fileID: 620318750}
-  _characterBrain: {fileID: 0}
+  _characterBrain: {fileID: 1178232325}
 --- !u!1 &866305172
 GameObject:
   m_ObjectHideFlags: 0
@@ -5142,7 +4992,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 513283481}
   - {fileID: 1178232326}
   m_Father: {fileID: 620318742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7438,6 +7287,7 @@ Transform:
   - {fileID: 113244225}
   - {fileID: 1472983583}
   - {fileID: 1933442734}
+  - {fileID: 1681640359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338569576
@@ -8874,7 +8724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerBrainBinding: {fileID: 920097124}
-  _evolutionBrain: {fileID: 513283482}
+  _evolutionBrain: {fileID: 0}
 --- !u!114 &1612617359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9668,6 +9518,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669138244}
   m_CullTransparentMesh: 1
+--- !u!1 &1681640358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681640359}
+  m_Layer: 0
+  m_Name: -- LINKERS --
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1681640359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681640358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2043074492}
+  m_Father: {fileID: 1327122471}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683228878
 GameObject:
   m_ObjectHideFlags: 0
@@ -9730,6 +9612,10 @@ PrefabInstance:
       propertyPath: _upgradeType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
+      propertyPath: _statUpgrader
+      value: 
+      objectReference: {fileID: 2043074493}
     - target: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: _characterStats
       value: 
@@ -9841,10 +9727,14 @@ PrefabInstance:
     - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 763032599}
+      objectReference: {fileID: 1846124828}
     - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeBaseAttackDamage
+      value: DoUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8599008705209286094, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_text
@@ -10949,6 +10839,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833980087}
   m_CullTransparentMesh: 1
+--- !u!114 &1846124828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
+  m_PrefabInstance: {fileID: 1684000622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b98a28ec5ba388458074d1d6ae58121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1877996129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11682,6 +11583,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
+      propertyPath: _statUpgrader
+      value: 
+      objectReference: {fileID: 2043074493}
+    - target: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: _characterStats
       value: 
       objectReference: {fileID: 763032599}
@@ -11792,10 +11697,14 @@ PrefabInstance:
     - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 763032599}
+      objectReference: {fileID: 2023944218}
     - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeSpecialAttackDamage
+      value: DoUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8599008705209286094, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_text
@@ -11811,6 +11720,158 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3478704440189379414, guid: 669af061a3180484f997967c54d28f23, type: 3}
   m_PrefabInstance: {fileID: 2023944216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2023944218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
+  m_PrefabInstance: {fileID: 2023944216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b98a28ec5ba388458074d1d6ae58121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2043074491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2043074492}
+  - component: {fileID: 2043074493}
+  m_Layer: 0
+  m_Name: StatUpgrader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2043074492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043074491}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1681640359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043074493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043074491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbeae98407c92e42b8e02018c5a8d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterStats: {fileID: 763032599}
+  _healthUpgradeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 100
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 100
+      value: 10000
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _dmgUpgradeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 10
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 100
+      value: 1000
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _specialDMGUpgradeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 20
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 100
+      value: 2000
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _costCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 100
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2045413567
 GameObject:
   m_ObjectHideFlags: 0
@@ -12900,24 +12961,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1038368315}
     m_Modifications:
     - target: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 790268809952226850, guid: 669af061a3180484f997967c54d28f23, type: 3}
-      propertyPath: _characterStats
+      propertyPath: _statUpgrader
       value: 
-      objectReference: {fileID: 763032599}
+      objectReference: {fileID: 2043074493}
     - target: {fileID: 1191826587428616506, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_Name
       value: Upgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191826587428616506, guid: 669af061a3180484f997967c54d28f23, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1661579743339440540, guid: 669af061a3180484f997967c54d28f23, type: 3}
-      propertyPath: m_text
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3478704440189379414, guid: 669af061a3180484f997967c54d28f23, type: 3}
       propertyPath: m_Pivot.x
@@ -12999,14 +13048,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771504053486305670, guid: 669af061a3180484f997967c54d28f23, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 763032599}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
