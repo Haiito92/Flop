@@ -9,7 +9,7 @@ public class InventorySlotBoss : MonoBehaviour
 
     private EquipementData _eqd;
 
-    public event Action<EquipementData> OnEQDChange;
+    public event Action<EquipementData, EquipementData> OnEQDChange;
 
     public EquipementData EQD { get => _eqd; set => _eqd = value; }
 
@@ -22,8 +22,9 @@ public class InventorySlotBoss : MonoBehaviour
 
     private void _invSlot_OnStatCheck(InventoryItem InvIt)
     {
+        EquipementData eqd = EQD;
         EQD = InvIt.Equipment.EquipementData;
-        OnEQDChange?.Invoke(EQD);
+        OnEQDChange?.Invoke(eqd,EQD);
         //Recup les stats que tu veux de l'item sur le boss AKA son atk def etc ...
         //EX : EquipementData.Atk
     }
