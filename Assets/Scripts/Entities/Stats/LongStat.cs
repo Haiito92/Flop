@@ -18,6 +18,7 @@ public class LongStat : Stat<long>
 
     public override void AugmentBaseValue(long value)
     {
+        base.AugmentBaseValue(value);
         _baseValue += value;
     }
 

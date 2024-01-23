@@ -6,12 +6,17 @@ using UnityEngine;
 public abstract class Stat<T>
 {
     [SerializeField] protected T _baseValue;
+    [SerializeField] int _level;
 
     [SerializeField] protected List<T> _additiveModifiers = new List<T>();
     [SerializeField] protected List<float> _multiplicativeModifiers = new List<float>();
 
     protected T _additiveValue;
     protected float _multiplicativeValue;
+
+    #region Properties
+    public int Level => _level; 
+    #endregion
 
     public abstract T GetValue();
 
@@ -20,7 +25,10 @@ public abstract class Stat<T>
         _baseValue = value;
     }
 
-    public abstract void AugmentBaseValue(T value);
+    public virtual void AugmentBaseValue(T value)
+    {
+        _level ++;
+    }
 
     protected abstract void SetAdditiveValue();
 

@@ -18,6 +18,7 @@ public class FloatStat : Stat<float>
 
     public override void AugmentBaseValue(float value)
     {
+        base.AugmentBaseValue(value);
         _baseValue += value;
     }
 
