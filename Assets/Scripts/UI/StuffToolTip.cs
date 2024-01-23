@@ -29,7 +29,7 @@ public class StuffToolTip : ToolTip_UI
                 color = new Color(255, 0, 0, 1);
                 break;
             case EquipementType.LEGS:
-                color = new Color(0, 0, 0, 1);
+                color = new Color(65, 242, 68, 1);
                 break;
             case EquipementType.NONE:
                 color = new Color(120, 255, 105, 1);
