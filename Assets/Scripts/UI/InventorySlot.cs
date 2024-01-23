@@ -8,6 +8,12 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 {
     [SerializeField] private EquipementType _slotType;
 
+    [SerializeField] private GameObject _itemPrefab;
+
+    [SerializeField] StuffToolTip _toolTip;
+
+    private GameObject _instanceOfGO;
+
     public event Action<InventoryItem> OnStatCheck;
 
     public void OnDrop(PointerEventData eventData)
@@ -15,15 +21,30 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         GameObject dropped = eventData.pointerDrag;
         InventoryItem draggableItem = dropped.GetComponent<InventoryItem>();
         EquipementController draggableController = dropped.GetComponent<EquipementController>();
+
         if(draggableController.EquipementData.EquipementType == _slotType)
         {
-            draggableItem.ParentAfterDrag = transform;
-            OnStatCheck?.Invoke(draggableItem);
-        }
-        if(_slotType == EquipementType.NONE)
-        {
-            draggableItem.ParentAfterDrag = transform;
-            OnStatCheck?.Invoke(draggableItem);
+            if (this.transform.childCount > 0)
+            {
+                foreach(Transform child in transform)
+                {
+                    if(child.GetComponent<EquipementController>().EquipementData.Id != draggableController.EquipementData.Id)
+                    {
+                        Destroy(child.gameObject);
+                        _instanceOfGO = Instantiate(_itemPrefab, this.transform);
+                        _instanceOfGO.GetComponent<EquipementController>().Init(draggableController.EquipementData.Id);
+                        _instanceOfGO.GetComponent<InventoryItem>().ToolTip = _toolTip;
+                        OnStatCheck?.Invoke(_instanceOfGO.GetComponent<InventoryItem>());
+                    }
+                }
+            } else
+            {
+                _instanceOfGO = Instantiate(_itemPrefab, this.transform);
+                _instanceOfGO.GetComponent<EquipementController>().Init(draggableController.EquipementData.Id);
+                _instanceOfGO.GetComponent<InventoryItem>().ToolTip = _toolTip;
+                OnStatCheck?.Invoke(_instanceOfGO.GetComponent<InventoryItem>());
+            }
+
         }
     }
 }

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6623223576102632750}
   - component: {fileID: 5665093703868336318}
   - component: {fileID: 7380014263293377969}
-  - component: {fileID: 5045063396686946954}
   - component: {fileID: 1668928290121684779}
   - component: {fileID: 3376087148846961766}
+  - component: {fileID: 3241077516210911468}
   m_Layer: 5
   m_Name: EquipmentImage
   m_TagString: Untagged
@@ -93,23 +93,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 5665093703868336318}
   _toolTip: {fileID: 0}
---- !u!114 &5045063396686946954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3093711562456296177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc6fa4efe3d4483408b6a59c8ec5aabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _description: 
-  _atk: 0
-  _def: 0
-  _equipementType: 0
-  _itemID: 1
 --- !u!61 &1668928290121684779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,3 +165,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3241077516210911468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093711562456296177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6fa4efe3d4483408b6a59c8ec5aabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _description: 
+  _atk: 0
+  _def: 0
+  _equipementType: 0
+  _itemID: 0

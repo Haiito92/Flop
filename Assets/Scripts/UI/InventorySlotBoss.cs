@@ -7,6 +7,12 @@ public class InventorySlotBoss : MonoBehaviour
 {
     [SerializeField] InventorySlot _invSlot;
 
+    private EquipementData _eqd;
+
+    public event Action<EquipementData> OnEQDChange;
+
+    public EquipementData EQD { get => _eqd; set => _eqd = value; }
+
     private void Awake()
     {
         _invSlot = transform.GetComponent<InventorySlot>();
@@ -16,7 +22,8 @@ public class InventorySlotBoss : MonoBehaviour
 
     private void _invSlot_OnStatCheck(InventoryItem InvIt)
     {
-        EquipementData EQD = InvIt.Equipment.EquipementData;
+        EQD = InvIt.Equipment.EquipementData;
+        OnEQDChange?.Invoke(EQD);
         //Recup les stats que tu veux de l'item sur le boss AKA son atk def etc ...
         //EX : EquipementData.Atk
     }

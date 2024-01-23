@@ -8,9 +8,9 @@ public class ItemInventoryUI : MonoBehaviour
 
     [SerializeField] public GameObject _itemPrefab;
 
-    private GameObject _instanceOfGO;
+    [SerializeField] StuffToolTip _toolTip;
 
-    [SerializeField] ItemInventory _itemInventory;
+    private GameObject _instanceOfGO;
 
     EquipementData[] CachedEquipments { get; set; }
 
@@ -24,8 +24,16 @@ public class ItemInventoryUI : MonoBehaviour
     {
         for(int i = 0; i < equipments.Length; i++)
         {
-            _instanceOfGO = Instantiate(_itemPrefab, _slots[i].transform);
-            _instanceOfGO.GetComponent<EquipementController>().Init(equipments[i].Id);
+            if (equipments[i] == null) return;
+            for(int j = 0; j < _slots.Count; j++)
+            {
+                if(equipments[i].Id == j && _slots[j].transform.childCount <= 0)
+                {
+                    _instanceOfGO = Instantiate(_itemPrefab, _slots[j].transform);
+                    _instanceOfGO.GetComponent<EquipementController>().Init(equipments[i].Id);
+                    _instanceOfGO.GetComponent<InventoryItem>().ToolTip = _toolTip;
+                }
+            }
         }
     }
 }

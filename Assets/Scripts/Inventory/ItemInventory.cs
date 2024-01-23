@@ -23,7 +23,7 @@ public class ItemInventory : MonoBehaviour
         int count = 0;
         foreach(EquipementData eq in Equipments)
         {
-            if (eq == null) return;
+            if (eq == null) break;
             if(equipement.Id == eq.Id)
             {
                 return;
