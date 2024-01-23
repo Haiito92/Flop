@@ -9,7 +9,8 @@ public class AnimatorBinding : MonoBehaviour
 
     //Refs to components
     [SerializeField] CharacterHealth _characterHealth;
-    [SerializeField] CharacterBrain _characterBrain;
+    [SerializeField] BrainBinding _brainBinding;
+    [SerializeField] CharacterBrain _currentBrain;
 
     private void Reset()
     {
@@ -22,8 +23,15 @@ public class AnimatorBinding : MonoBehaviour
     {
         _characterHealth.OnStartDeath += TriggerDeathAnimation;
 
-        _characterBrain.OnBasicAttack += TriggerBasicAttackAnimation;
-        _characterBrain.OnSpecialAttack += TriggerSpecialAttackAnimation;
+        _brainBinding.OnBrainChange += ChangeBrain;
+
+        _currentBrain.OnBasicAttack += TriggerBasicAttackAnimation;
+        _currentBrain.OnSpecialAttack += TriggerSpecialAttackAnimation;
+    }
+
+    void ChangeBrain(CharacterBrain newBrain)
+    {
+        _currentBrain = newBrain;
     }
 
     void TriggerDeathAnimation()
@@ -43,7 +51,7 @@ public class AnimatorBinding : MonoBehaviour
 
     void TriggerAttack()
     {
-        _characterBrain.DoBasicAttack();
+        _currentBrain.DoBasicAttack();
     }
 
     private void TriggerSpecialAttackAnimation()
@@ -53,6 +61,6 @@ public class AnimatorBinding : MonoBehaviour
 
     void TriggerSpecialAttack()
     {
-        _characterBrain.DoSpecialAttack();
+        _currentBrain.DoSpecialAttack();
     }
 }
