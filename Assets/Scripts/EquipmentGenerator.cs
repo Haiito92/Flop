@@ -57,55 +57,55 @@ public class EquipmentGenerator : MonoBehaviour
 
         if(random >= min && random < min + 5)
         {
-            return 12;
+            return 0;
         }
-        else if (random >= min + 5 && random < min + 10)
-        {
-            return 11;
-        }
-        else if(random >= min + 10 && random < min + 20)
-        {
-            return 10;
-        }
-        else if(random >= min + 20 && random < min + 30)
-        {
-            return 9;
-        }
-        else if(random >= min + 30 && random < min + 40)
-        {
-            return 8;
-        }
-        else if(random >= min + 40 && random < min + 50)
-        {
-            return 7;
-        }
-        else if (random >= min + 50 && random < min + 60)
-        {
-            return 6;
-        }
-        else if (random >= min + 60 && random < min + 70)
-        {
-            return 5;
-        }
-        else if (random >= min + 70 && random < min + 80)
-        {
-            return 4;
-        }
-        else if (random >= min + 80 && random < min + 90)
-        {
-            return 3;
-        }
-        else if (random >= min + 90 && random < min + 100)
-        {
-            return 2;
-        }
-        else if (random >= min + 100 && random < min + 110)
+        else if (random >= min && random < min + 10)
         {
             return 1;
         }
-        else if (random >= min + 110 && random <= min + 120)
+        else if(random >= min && random < min + 20)
         {
-            return 0;
+            return 2;
+        }
+        else if(random >= min && random < min + 30)
+        {
+            return 3;
+        }
+        else if(random >= min && random < min + 40)
+        {
+            return 4;
+        }
+        else if(random >= min && random < min + 50)
+        {
+            return 5;
+        }
+        else if (random >= min && random < min + 60)
+        {
+            return 6;
+        }
+        else if (random >= min && random < min + 70)
+        {
+            return 7;
+        }
+        else if (random >= min && random < min + 80)
+        {
+            return 8;
+        }
+        else if (random >= min && random < min + 90)
+        {
+            return 9;
+        }
+        else if (random >= min && random < min + 100)
+        {
+            return 10;
+        }
+        else if (random >= min && random < min + 110)
+        {
+            return 11;
+        }
+        else if (random >= min && random <= min + 120)
+        {
+            return 12;
         }
         return 0;
     }
