@@ -4,13 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum UpgradeType
-{
-    HEALTH,
-    BASIC_ATK_DMG,
-    SPECIAL_ATK_DMG
-}
-
 public class CharacterStats : MonoBehaviour
 {
     //Refs

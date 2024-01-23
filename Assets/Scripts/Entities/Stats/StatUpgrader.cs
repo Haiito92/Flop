@@ -3,6 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UpgradeType
+{
+    HEALTH,
+    BASIC_ATK_DMG,
+    SPECIAL_ATK_DMG
+}
+
 public class StatUpgrader : MonoBehaviour
 {
     [SerializeField] CharacterStats _characterStats;
