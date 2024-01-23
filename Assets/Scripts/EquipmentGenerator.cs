@@ -31,8 +31,7 @@ public class EquipmentGenerator : MonoBehaviour
     {
         int randomIndex = Random.Range(0, DatabasesManager.Instance.EquipementDatabase.EquipementDatas.Count);
         EquipementData equipmentDropped = DatabasesManager.Instance.EquipementDatabase.EquipementDatas[randomIndex];
-        equipmentDropped.Id = _currentId;
-        _currentId++;
+        equipmentDropped.Id = randomIndex;
         Inventory.Instance.ItemInventory.Add(equipmentDropped);
     }
 }

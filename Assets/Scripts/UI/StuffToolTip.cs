@@ -17,7 +17,7 @@ public class StuffToolTip : ToolTip_UI
     public void SetStats(EquipementController _stats)
     {
         SetText(_atkValue, _stats.EquipementData.Atk);
-        SetText(_defValue, _stats.EquipementData.Def);
+        SetText(_defValue, _stats.EquipementData.Health);
         SetText(_nameValue, _stats.EquipementData.Name);
         Color color = new Color(0,0,0,1);
         switch (_stats.EquipementData.EquipementType)

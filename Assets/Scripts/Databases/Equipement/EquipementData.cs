@@ -19,7 +19,7 @@ public class EquipementData
     [SerializeField] private Sprite _sprite;
     [SerializeField] private EquipementType _equipementType;
     [SerializeField] private int _atk;
-    [SerializeField] private int _def;
+    [SerializeField] private int _health;
 
     private int _id = 0;
 
@@ -29,7 +29,7 @@ public class EquipementData
     public Sprite Sprite { get => _sprite; }
     public EquipementType EquipementType { get => _equipementType; }
     public int Atk { get => _atk; set => _atk = value; }
-    public int Def { get => _def; set => _def = value; }
+    public int Health { get => _health; set => _health = value; }
     public int Id { get => _id; set => _id = value; }
 
     #endregion
@@ -41,6 +41,6 @@ public class EquipementData
         _sprite = null;
         _equipementType = EquipementType.NONE;
         _atk = 0;
-        _def = 0;
+        _health = 0;
     }
 }

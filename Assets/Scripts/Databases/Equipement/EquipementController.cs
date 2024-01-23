@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class EquipementController : MonoBehaviour
 {
-    // Data stored in Item Controller //
+    // Data stored in Item Controller /
     private EquipementData _equipementData;
 
     // Fields //
     [SerializeField] private string _description;
     [SerializeField] private int _atk;
-    [SerializeField] private int _def;
+    [SerializeField] private int _health;
     [SerializeField] private EquipementType _equipementType;
     [SerializeField] private int _itemID;
 
@@ -37,7 +37,7 @@ public class EquipementController : MonoBehaviour
         if (EquipementData == null) { return; }
         name = EquipementData.Name;
         _atk = EquipementData.Atk;
-        _def = EquipementData.Def;
+        _health = EquipementData.Health;
         _description = EquipementData.Description;
         Image.sprite = EquipementData.Sprite;
         _equipementType = EquipementData.EquipementType;
