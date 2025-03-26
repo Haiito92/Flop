@@ -1,0 +1,81 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharacterHealth : MonoBehaviour
+{
+    [SerializeField] LongStat _maxHealth;
+    long _currentHealth;
+
+    [SerializeField] BrainBinding _characterBrain;
+
+    private void Reset()
+    {
+        _characterBrain = GetComponent<BrainBinding>();
+    }
+
+    //Events
+    public event Action<long, long> OnHealthChange;
+    public event Action OnStartDeath;
+    public event Action OnEndDeath;
+
+    //Properties
+    public LongStat MaxHealth { get => _maxHealth; set => _maxHealth = value; }
+    public long CurrentHealth
+    {
+        get => _currentHealth;
+        set
+        {
+            _currentHealth = value;
+            OnHealthChange?.Invoke(_currentHealth, _maxHealth.GetValue());
+        }
+    }
+    public bool IsAlive { get { return CurrentHealth > 0; } set { } }
+
+
+    private void Awake()
+    {
+        Init();
+    }
+
+    private void Start()
+    {
+        OnHealthChange?.Invoke(_currentHealth, _maxHealth.GetValue());
+    }
+
+    void Init()
+    {
+        CurrentHealth = _maxHealth.GetValue();
+    }
+
+    public void Heal(long heal)
+    {
+        if (heal < 0) throw new ArgumentException("Heal value must be superior or equal to 0");
+        CurrentHealth = (long)Mathf.Clamp(_currentHealth + heal, 0, _maxHealth.GetValue());
+    }
+
+    public void TakeDamage(long damage)
+    {
+        if (damage < 0) throw new ArgumentException("Damage value must be superior or equal to 0");
+        CurrentHealth = (long)Mathf.Clamp(_currentHealth - damage, 0, _maxHealth.GetValue());
+
+        if (CurrentHealth <= 0)
+        {
+            _characterBrain.CurrentBrain.StopAttackRoutine();
+            OnStartDeath?.Invoke();
+        }
+    }
+    public virtual void Die()
+    {
+        OnEndDeath?.Invoke();
+        Destroy(GetComponentInParent<Transform>().gameObject);
+    }
+
+
+    public virtual void ResetCharacter()
+    {
+        CurrentHealth = _maxHealth.GetValue();
+        _characterBrain.CurrentBrain.StartAttackRoutine();
+    }
+}
